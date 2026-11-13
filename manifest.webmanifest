@@ -1,5 +1,7 @@
 {
+  "id": "./",
   "name": "나의 시장일보",
+  "description": "시세·뉴스·부동산 개인 대시보드",
   "short_name": "시장일보",
   "start_url": "./",
   "scope": "./",
