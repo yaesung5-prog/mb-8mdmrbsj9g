@@ -1,7 +1,7 @@
 // 나의 시장일보 서비스 워커
 // - 같은 사이트의 페이지/파일: 네트워크 우선, 실패하면 마지막으로 받아 둔 사본(오프라인에서도 보이게)
 // - 다른 사이트(실시간 시세, 글꼴, 차트 라이브러리): 건드리지 않음
-const CACHE = "mb-v1";
+const CACHE = "mb-v2"; // 바꾸면 이전 사본을 모두 지웁니다
 const CORE = ["./", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", (event) => {
@@ -28,8 +28,10 @@ self.addEventListener("fetch", (event) => {
     fresh
       .then((res) => {
         if (res.ok) {
+          // 페이지는 주소 뒤 ?v=… 를 떼고 한 칸에만 저장해 사본이 쌓이지 않게 합니다.
+          const key = req.mode === "navigate" ? url.origin + url.pathname : req;
           const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put(req, copy));
+          caches.open(CACHE).then((c) => c.put(key, copy));
         }
         return res;
       })
