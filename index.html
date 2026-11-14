@@ -273,49 +273,56 @@ table.flows td strong { font-weight: 700; }
 .c-sub { font-size: 12px; color: var(--muted); line-height: 1.5; }
 .c-detail { padding: 4px 0 12px; }
 .c-legend { margin: 2px 0 6px; font-size: 12.5px; color: var(--muted); }
-.c-plot { width: 100%; height: 220px; }
+.c-plot { width: 100%; }
+.c-vol-cap { margin: 6px 0 2px; font-size: 11.5px; color: var(--muted); }
 .c-plot.failed { height: auto; font-size: 13px; color: var(--muted); }
 .c-deals { width: 100%; margin-top: 8px; border-collapse: collapse; font-size: 13px; }
 .c-deals th { text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 4px 0; }
 .c-deals td { padding: 4px 0; border-bottom: 1px solid var(--rule); font-family: var(--figures); }
 .c-deals td.price { font-weight: 700; text-align: right; }
-.c-deals th:last-child { text-align: right; }</style>
+.c-deals th:last-child { text-align: right; }
+.corridor-map { height: 260px; margin: 6px 0 10px; border: 1px solid var(--rule); background: #e9e3d6; z-index: 0; }
+.corridor-map .leaflet-tooltip { font-family: var(--serif); font-size: 12px; }</style>
 </head>
 <body>
 <div class="page app">
   <header class="masthead">
     <h1>나의 시장일보</h1>
-    <p class="issue">11월 14일 토요일<br>한 주 정리 판 · 10:00</p>
+    <p class="issue">11월 14일 토요일<br>미국장 판 · 11:24</p>
   </header>
   <p id="app-status" class="app-status" aria-live="polite"></p>
   <main>
   <section id="pane-market" class="pane" role="tabpanel" aria-labelledby="nav-market">
-    <p class="lede">뉴욕증시, 다우지수만 0.1% 상승…엔비디아 2%↓, 하락 지속(종합)</p>
+    <p class="lede">&#34;앨리스 황, 그냥 고객&#34;...&#39;쓰레기 자책&#39; 젠슨황, 엔비디아에도 거짓말</p>
     <ul class="board" aria-label="시세 숫자판">
-      <li class="has-chart">
-<button type="button" class="cell" data-chart="kospi" aria-label="코스피 차트 보기">        <span class="label">코스피</span>
-        <span class="value">5,290.53</span>
-<span class="change up">▲ 4.56%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3.4 L6.9 3 L10.9 3.7 L14.8 5.2 L18.7 7.2 L22.7 9.9 L26.6 13.7 L30.5 14 L34.4 19.1 L38.4 17.8 L42.3 16.7 L46.2 19.1 L50.2 17.1 L54.1 19.3 L58 19.1 L62 20 L65.9 18.1 L69.8 14 L73.8 14.8 L77.7 17.1 L81.6 15.7 L85.6 18 L89.5 17.6 L93.4 21 L97.3 24.5 L101.3 25 L105.2 22.6 L109.1 21 L113.1 21.4 L117 22" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="22" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
-      <li class="has-chart">
-<button type="button" class="cell" data-chart="kosdaq" aria-label="코스닥 차트 보기">        <span class="label">코스닥</span>
-        <span class="value">696.53</span>
-<span class="change up">▲ 2.67%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 8 L6.9 5 L10.9 5.1 L14.8 3 L18.7 4.7 L22.7 5.2 L26.6 8.5 L30.5 9.5 L34.4 10.5 L38.4 15.5 L42.3 12.8 L46.2 11.7 L50.2 13.8 L54.1 13 L58 15.2 L62 16.2 L65.9 18.1 L69.8 16.8 L73.8 14.6 L77.7 16.1 L81.6 18.3 L85.6 17.5 L89.5 19.9 L93.4 19.1 L97.3 21.9 L101.3 24.6 L105.2 25 L109.1 22.8 L113.1 19.8 L117 20.5" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="20.5" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
       <li class="has-chart">
 <button type="button" class="cell" data-chart="nasdaq" aria-label="나스닥 차트 보기">        <span class="label">나스닥</span>
         <span class="value">25,136.27</span>
-<span class="change up">▲ 2.27%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3.8 L6.9 3 L10.9 3.4 L14.8 5.7 L18.7 4.6 L22.7 5.4 L26.6 5.6 L30.5 9.1 L34.4 8.9 L38.4 12.8 L42.3 10.8 L46.2 10.9 L50.2 9 L54.1 13.7 L58 14 L62 12.6 L65.9 10.5 L69.8 10 L73.8 12.5 L77.7 17.5 L81.6 19.3 L85.6 17.9 L89.5 15.5 L93.4 25 L97.3 23.2 L101.3 18.7 L105.2 20 L109.1 17.3 L113.1 18 L117 19.5" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="19.5" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
+<span class="change down">▼ 0.91%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3.8 L6.9 3 L10.9 3.4 L14.8 5.7 L18.7 4.6 L22.7 5.4 L26.6 5.6 L30.5 9.1 L34.4 8.9 L38.4 12.8 L42.3 10.8 L46.2 10.9 L50.2 9 L54.1 13.7 L58 14 L62 12.6 L65.9 10.5 L69.8 10 L73.8 12.5 L77.7 17.5 L81.6 19.3 L85.6 17.9 L89.5 15.5 L93.4 25 L97.3 23.2 L101.3 18.7 L105.2 20 L109.1 17.3 L113.1 18 L117 19.5" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="19.5" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
+      <li class="has-chart">
+<button type="button" class="cell" data-chart="sp500" aria-label="S&amp;P500 차트 보기">        <span class="label">S&amp;P500</span>
+        <span class="value">7,561.67</span>
+<span class="change down">▼ 0.40%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 5.1 L6.9 3 L10.9 3.8 L14.8 5.5 L18.7 3.3 L22.7 3.6 L26.6 3.6 L30.5 7.7 L34.4 6.5 L38.4 10.5 L42.3 9.1 L46.2 8 L50.2 5.9 L54.1 10.4 L58 12.2 L62 9.7 L65.9 7.6 L69.8 6.5 L73.8 7.7 L77.7 14.3 L81.6 16.1 L85.6 14.8 L89.5 9.2 L93.4 25 L97.3 23.9 L101.3 15.7 L105.2 17.1 L109.1 12.4 L113.1 13.7 L117 15.2" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="15.2" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
+      <li>
+<div class="cell">        <span class="label">미 10년물 금리</span>
+        <span class="value">5.15%</span>
+<span class="change up">▲ 1.00%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3 L6.9 4.9 L10.9 4.6 L14.8 6.7 L18.7 6.1 L22.7 6.3 L26.6 7.4 L30.5 8.6 L34.4 13.3 L38.4 12.9 L42.3 11.1 L46.2 12 L50.2 10.7 L54.1 19.6 L58 18 L62 18.1 L65.9 17.8 L69.8 15.3 L73.8 17.9 L77.7 20.7 L81.6 22.4 L85.6 19.7 L89.5 22.4 L93.4 25 L97.3 24 L101.3 23.7 L105.2 18.2 L109.1 17.5 L113.1 12.7 L117 10.3" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="10.3" r="2.4" fill="#2f5a9e"/></svg></span></div>      </li>
       <li class="has-chart">
 <button type="button" class="cell" data-chart="usdkrw" aria-label="원/달러 차트 보기">        <span class="label">원/달러</span>
         <span class="value">1,333.78</span>
-<span class="change down">▼ 1.66%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 13.8 L6.9 13.2 L10.9 15.3 L14.8 15.7 L18.7 13.6 L22.7 14.7 L26.6 18.4 L30.5 15 L34.4 15.5 L38.4 14.7 L42.3 18.7 L46.2 20.6 L50.2 23.8 L54.1 22.9 L58 22.7 L62 25 L65.9 23.4 L69.8 22.3 L73.8 15 L77.7 16.3 L81.6 23 L85.6 12.6 L89.5 13.6 L93.4 15.2 L97.3 6.4 L101.3 3 L105.2 13.1 L109.1 14.2 L113.1 17.2 L117 18.5" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="18.5" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
+<span class="change down">▼ 0.19%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 13.8 L6.9 13.2 L10.9 15.3 L14.8 15.7 L18.7 13.6 L22.7 14.7 L26.6 18.4 L30.5 15 L34.4 15.5 L38.4 14.7 L42.3 18.7 L46.2 20.6 L50.2 23.8 L54.1 22.9 L58 22.7 L62 25 L65.9 23.4 L69.8 22.3 L73.8 15 L77.7 16.3 L81.6 23 L85.6 12.6 L89.5 13.6 L93.4 15.2 L97.3 6.4 L101.3 3 L105.2 13.1 L109.1 14.2 L113.1 17.2 L117 18.5" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="18.5" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
+      <li>
+<div class="cell">        <span class="label">필라델피아 반도체</span>
+        <span class="value">10,146.32</span>
+<span class="change down">▼ 3.43%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3.2 L6.9 3 L10.9 3.8 L14.8 6.1 L18.7 6.4 L22.7 8.1 L26.6 8.3 L30.5 11 L34.4 11.6 L38.4 13.9 L42.3 12.9 L46.2 13.1 L50.2 12 L54.1 16 L58 15.8 L62 14.2 L65.9 12.1 L69.8 11 L73.8 11.9 L77.7 16.2 L81.6 18.1 L85.6 16.7 L89.5 18.4 L93.4 25 L97.3 23 L101.3 19.7 L105.2 19.8 L109.1 16.9 L113.1 17.2 L117 19.1" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="19.1" r="2.4" fill="#2f5a9e"/></svg></span></div>      </li>
       <li class="has-chart">
 <button type="button" class="cell" data-chart="samsung" aria-label="삼성전자 차트 보기">        <span class="label">삼성전자</span>
         <span class="value">206,000원</span>
-<span class="change up">▲ 9.17%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3 L6.9 3 L10.9 4 L14.8 4.9 L18.7 6.5 L22.7 9.4 L26.6 14.1 L30.5 14.1 L34.4 19.6 L38.4 18.2 L42.3 17.6 L46.2 19.3 L50.2 16.2 L54.1 18.5 L58 18.2 L62 18.9 L65.9 16.6 L69.8 11.6 L73.8 14.1 L77.7 15.9 L81.6 14.8 L85.6 17.2 L89.5 17.6 L93.4 21.8 L97.3 25 L101.3 24.7 L105.2 22.4 L109.1 20.6 L113.1 20.1 L117 20.6" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="20.6" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
+<span class="change down">▼ 0.96%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3 L6.9 3 L10.9 4 L14.8 4.9 L18.7 6.5 L22.7 9.4 L26.6 14.1 L30.5 14.1 L34.4 19.6 L38.4 18.2 L42.3 17.6 L46.2 19.3 L50.2 16.2 L54.1 18.5 L58 18.2 L62 18.9 L65.9 16.6 L69.8 11.6 L73.8 14.1 L77.7 15.9 L81.6 14.8 L85.6 17.2 L89.5 17.6 L93.4 21.8 L97.3 25 L101.3 24.7 L105.2 22.4 L109.1 20.6 L113.1 20.1 L117 20.6" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="20.6" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
       <li class="has-chart">
 <button type="button" class="cell" data-chart="hynix" aria-label="SK하이닉스 차트 보기">        <span class="label">SK하이닉스</span>
         <span class="value">1,216,000원</span>
-<span class="change up">▲ 7.42%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3.2 L6.9 3 L10.9 5.1 L14.8 6.7 L18.7 8 L22.7 10.3 L26.6 15.3 L30.5 16.1 L34.4 21 L38.4 20.7 L42.3 20.5 L46.2 22.2 L50.2 20 L54.1 22.2 L58 20.5 L62 20.6 L65.9 18.5 L69.8 14 L73.8 12.8 L77.7 16.1 L81.6 14.4 L85.6 16.7 L89.5 16.8 L93.4 20.9 L97.3 25 L101.3 24.9 L105.2 22.5 L109.1 20.5 L113.1 21.2 L117 22.4" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="22.4" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
+<span class="change down">▼ 3.03%</span><span class="spark-wrap"><svg class="spark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" role="img" aria-label="최근 추이" style="width:100%;max-width:120px;height:auto;display:block"><path d="M3 3.2 L6.9 3 L10.9 5.1 L14.8 6.7 L18.7 8 L22.7 10.3 L26.6 15.3 L30.5 16.1 L34.4 21 L38.4 20.7 L42.3 20.5 L46.2 22.2 L50.2 20 L54.1 22.2 L58 20.5 L62 20.6 L65.9 18.5 L69.8 14 L73.8 12.8 L77.7 16.1 L81.6 14.4 L85.6 16.7 L89.5 16.8 L93.4 20.9 L97.3 25 L101.3 24.9 L105.2 22.5 L109.1 20.5 L113.1 21.2 L117 22.4" fill="none" stroke="#2f5a9e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="117" cy="22.4" r="2.4" fill="#2f5a9e"/></svg></span></button>      </li>
     </ul>
 <p class="hint">숫자를 누르면 아래 차트가 그 종목으로 바뀝니다.</p>    <figure class="lwc-fig" id="candle-fig">
       <figcaption>시세 <span class="muted">일봉 · 20일(검정)·60일(회색) 이동평균</span></figcaption>
@@ -326,21 +333,21 @@ table.flows td strong { font-weight: 700; }
     <h2 class="section-h">주요 기사</h2>
     <ul class="stories compact">
       <li class="story">
-        <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EB%89%B4%EC%9A%95%EC%A6%9D%EC%8B%9C%2C%20%EB%8B%A4%EC%9A%B0%EC%A7%80%EC%88%98%EB%A7%8C%200.1%25%20%EC%83%81%EC%8A%B9%E2%80%A6%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%202%25%E2%86%93%2C%20%ED%95%98%EB%9D%BD%20%EC%A7%80%EC%86%8D%28%EC%A2%85%ED%95%A9%29%22" rel="noopener" target="_blank">뉴욕증시, 다우지수만 0.1% 상승…엔비디아 2%↓, 하락 지속(종합)</a>
-<ul class="points"><li>미국 뉴욕증시는 젠슨 황 엔비디아 전 최고경영자(CEO) 스캔들의 여파가 이어지면서 주요 지수가 혼조 마감함</li></ul>        <p class="meta">연합뉴스 · 07:14</p>
+        <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%22%EC%95%A8%EB%A6%AC%EC%8A%A4%20%ED%99%A9%2C%20%EA%B7%B8%EB%83%A5%20%EA%B3%A0%EA%B0%9D%22...%27%EC%93%B0%EB%A0%88%EA%B8%B0%20%EC%9E%90%EC%B1%85%27%20%EC%A0%A0%EC%8A%A8%ED%99%A9%2C%20%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%EC%97%90%EB%8F%84%20%EA%B1%B0%EC%A7%93%EB%A7%90%22" rel="noopener" target="_blank">&#34;앨리스 황, 그냥 고객&#34;...&#39;쓰레기 자책&#39; 젠슨황, 엔비디아에도 거짓말</a>
+<ul class="points"><li>로이터는 지난달 젠슨황과 엔비디아가 주고받은 대화 내역을 확인했다면서 앨리스 황과 관계를 묻는 사측 질문에 대해 젠슨황이 &#34;보통의 고객…</li></ul>        <p class="meta">머니투데이 · 10:50</p>
       </li>
       <li class="story">
-        <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EC%9B%94%EA%B0%80%20%EB%8B%AC%EA%B5%AC%EB%8A%94%20K-%EB%B7%B0%ED%8B%B0%E2%80%A6%EC%95%84%EB%AA%A8%EB%A0%88%C2%B7%ED%8C%8C%EB%A7%88%EB%A6%AC%EC%84%9C%EC%B9%98%20%EB%8B%B4%EC%9D%80%20ETF%2C%20%EB%89%B4%EC%9A%95%EC%A6%9D%EC%8B%9C%20%EC%83%81%EC%9E%A5%22" rel="noopener" target="_blank">월가 달구는 K-뷰티…아모레·파마리서치 담은 ETF, 뉴욕증시 상장</a>
-<ul class="points"><li>한국 화장품과 의료 미용 기업에 집중 투자하는 상장지수펀드(ETF)가 뉴욕증시에 새로 상장됨</li></ul>        <p class="meta">머니투데이 · 07:57</p>
+        <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%27%ED%8F%AC%EC%8A%A4%ED%8A%B8%20%EC%A0%A0%EC%8A%A8%20%ED%99%A9%27%20%EC%9D%B8%EC%84%A0%20%EC%9E%A5%EA%B8%B0%ED%99%94%20%EC%A1%B0%EC%A7%90%E2%80%A6%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%22%ED%8A%B9%EC%A0%95%EC%9D%B8%EC%82%AC%20%EC%A0%91%EC%B4%89%20%EC%95%88%ED%95%B4%22%22" rel="noopener" target="_blank">&#39;포스트 젠슨 황&#39; 인선 장기화 조짐…엔비디아 &#34;특정인사 접촉 안해&#34;</a>
+<ul class="points"><li>황 전 CEO의 갑작스러운 사임 이후 차기 리더십 인선을 서두르기보다 공식 절차를 밟아 신중하게 접근하겠다는 뜻으로 풀이됨</li></ul>        <p class="meta">머니투데이 · 08:41</p>
       </li>
       <li class="story">
-        <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%5B%EB%8D%94%EC%98%81%EC%83%81%5D%20%E2%91%A0%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9E%A5%20%ED%8F%AD%ED%96%89%20%E2%91%A1%EC%A0%A0%EC%8A%A8%20%ED%99%A9%20%EB%B3%BC%20%EB%BD%80%EB%BD%80%20%E2%91%A2%EA%B2%BD%EC%B0%B0%EA%B4%80%EC%9D%98%20%EC%B4%89%22" rel="noopener" target="_blank">[더영상] ①카페 사장 폭행 ②젠슨 황 볼 뽀뽀 ③경찰관의 촉</a>
-<ul class="points"><li>한 주간 온라인을 달궜던 동영상들을 소개합니다.</li></ul>        <p class="meta">머니투데이 · 07:03</p>
+        <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20CEO%20%EC%82%AC%ED%87%B4%20%ED%9B%84%ED%8F%AD%ED%92%8D%E2%80%A6%EB%82%98%EC%8A%A4%EB%8B%A5%200.91%25%E2%86%93%2C%20%E7%BE%8E%20%EB%B0%98%EB%8F%84%EC%B2%B4%EC%A3%BC%20%EC%A4%84%EC%A4%84%EC%9D%B4%20%EA%B8%89%EB%9D%BD%20By%20EBN%22" rel="noopener" target="_blank">엔비디아 CEO 사퇴 후폭풍…나스닥 0.91%↓, 美 반도체주 줄줄이 급락 By EBN</a>
+        <p class="meta">Investing.com 한국어 · 08:56</p>
       </li>
     </ul>
     <p class="more"><button type="button" class="link" data-goto="news">기사 전체 보기 →</button></p>
     <article class="edition brief">
-      <p class="stamp">미국장 판 · 09:24</p>
+      <p class="stamp">미국장 판 · 11:24</p>
 <h4>선물</h4>
 <ul class="facts">
   <li><span>S&amp;P500 선물</span><span class="figure"><strong>7,561.00</strong> <span class="down">▼ 0.71%</span></span></li>
@@ -349,11 +356,42 @@ table.flows td strong { font-weight: 700; }
 </ul>
       <h4>주요 종목</h4>
       <ul class="facts">
-<li><span>AMD</span><span class="figure down">▼ 8.75%</span></li><li><span>AVGO</span><span class="figure down">▼ 4.76%</span></li><li><span>LRCX</span><span class="figure down">▼ 3.36%</span></li><li><span>META</span><span class="figure up">▲ 2.90%</span></li><li><span>AMAT</span><span class="figure down">▼ 2.74%</span></li>      </ul>
+<li><span>AMD</span><span class="figure down">▼ 8.75%</span></li><li><span>AVGO</span><span class="figure down">▼ 4.76%</span></li><li><span>LRCX</span><span class="figure down">▼ 3.36%</span></li><li><span>AMAT</span><span class="figure down">▼ 2.74%</span></li><li><span>QCOM</span><span class="figure down">▼ 2.64%</span></li>      </ul>
     </article>
   </section>
 
   <section id="pane-news" class="pane" role="tabpanel" aria-labelledby="nav-news" hidden>
+    <article class="edition">
+      <h2 class="ed-h">미국장 판 <span class="muted">11:24</span></h2>
+      <ul class="stories">
+<li class="story lead">
+  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%22%EC%95%A8%EB%A6%AC%EC%8A%A4%20%ED%99%A9%2C%20%EA%B7%B8%EB%83%A5%20%EA%B3%A0%EA%B0%9D%22...%27%EC%93%B0%EB%A0%88%EA%B8%B0%20%EC%9E%90%EC%B1%85%27%20%EC%A0%A0%EC%8A%A8%ED%99%A9%2C%20%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%EC%97%90%EB%8F%84%20%EA%B1%B0%EC%A7%93%EB%A7%90%22" rel="noopener" target="_blank">&#34;앨리스 황, 그냥 고객&#34;...&#39;쓰레기 자책&#39; 젠슨황, 엔비디아에도 거짓말</a>
+  <ul class="points"><li>로이터는 지난달 젠슨황과 엔비디아가 주고받은 대화 내역을 확인했다면서 앨리스 황과 관계를 묻는 사측 질문에 대해 젠슨황이 &#34;보통의 고객…</li><li>로이터에 따르면 엔비디아는 지난해 가을과 지난달 두 번에 걸쳐 젠슨황에게 앨리스 황과 관계 확인을 요청함</li><li>이에 젠슨황은 앨리스 황과 부적절한 관계가 아니라고 해명한 것으로 전해진다.</li></ul>
+  <p class="meta">머니투데이 · 10:50 · <a class="origin" href="https://www.mt.co.kr/world/2026/11/14/2026111410394683466" rel="noopener" target="_blank">원문</a></p>
+</li>
+<li class="story">
+  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%27%ED%8F%AC%EC%8A%A4%ED%8A%B8%20%EC%A0%A0%EC%8A%A8%20%ED%99%A9%27%20%EC%9D%B8%EC%84%A0%20%EC%9E%A5%EA%B8%B0%ED%99%94%20%EC%A1%B0%EC%A7%90%E2%80%A6%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%22%ED%8A%B9%EC%A0%95%EC%9D%B8%EC%82%AC%20%EC%A0%91%EC%B4%89%20%EC%95%88%ED%95%B4%22%22" rel="noopener" target="_blank">&#39;포스트 젠슨 황&#39; 인선 장기화 조짐…엔비디아 &#34;특정인사 접촉 안해&#34;</a>
+  <ul class="points"><li>황 전 CEO의 갑작스러운 사임 이후 차기 리더십 인선을 서두르기보다 공식 절차를 밟아 신중하게 접근하겠다는 뜻으로 풀이됨</li><li>최종 후계자 윤곽이 드러나기까지 적잖은 시간이 걸릴 전망</li></ul>
+  <p class="meta">머니투데이 · 08:41 · <a class="origin" href="https://www.mt.co.kr/world/2026/11/14/2026111408335577074" rel="noopener" target="_blank">원문</a></p>
+</li>
+<li class="story">
+  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20CEO%20%EC%82%AC%ED%87%B4%20%ED%9B%84%ED%8F%AD%ED%92%8D%E2%80%A6%EB%82%98%EC%8A%A4%EB%8B%A5%200.91%25%E2%86%93%2C%20%E7%BE%8E%20%EB%B0%98%EB%8F%84%EC%B2%B4%EC%A3%BC%20%EC%A4%84%EC%A4%84%EC%9D%B4%20%EA%B8%89%EB%9D%BD%20By%20EBN%22" rel="noopener" target="_blank">엔비디아 CEO 사퇴 후폭풍…나스닥 0.91%↓, 美 반도체주 줄줄이 급락 By EBN</a>
+<p class="sum">엔비디아 CEO 사퇴 후폭풍…나스닥 <strong>0.91%</strong>↓, 美 반도체주 줄줄이 급락 By EBN Investing.com 한국어 엔비디아, 젠슨 황 사임에 <strong>8%</strong> 하락 출발…나스닥 <strong>0.52%</strong>↓ 뉴시스 뉴욕증시, 반도체주 약세에 나스닥 <strong>0.91%</strong>↓…다우는 상승 Chosunbiz</p>  <p class="meta">Investing.com 한국어 · 08:56 · <a class="origin" href="https://news.google.com/rss/articles/CBMicEFVX3lxTFBFZ1ZCdmFPR2N1M21MX3FqVnI4SFJRclhUcm94b0d5VWdhcTdJOWdLOUZiTnVBSmk0elgzazBESWQ0dXJyLVh4S2xGOV9VcVBiTEhYM3UwTkJsaV9haDZITGtkbDEyV3JQWWlKUm5vNFg?oc=5" rel="noopener" target="_blank">원문</a></p>
+</li>
+<li class="story">
+  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EB%B6%84%EB%AA%85%20%EC%88%98%EC%B6%9C%20%ED%86%B5%EC%A0%9C%ED%96%88%EB%8A%94%EB%8D%B0%E2%80%A6%EC%A4%91%EA%B5%AD%2C%20%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%EC%B9%A9%20%EC%9D%98%EC%A1%B4%20%274%EC%A1%B06000%EC%96%B5%27%20%EC%9D%B4%EC%83%81%22" rel="noopener" target="_blank">분명 수출 통제했는데…중국, 엔비디아 칩 의존 &#39;4조6000억&#39; 이상</a>
+  <p class="meta">한국경제 · 11:20 · <a class="origin" href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBvTDYyZjAzUDZZamxKRFRCNHdnaEhlUmNpWEt0VnE5VURTcm5OR0VvdmZJN3lFdlZ3SXJOS2IwOFd3a3hOTkVaWThpaU9HckdrbTFxRGo3VjZwZw?oc=5" rel="noopener" target="_blank">원문</a></p>
+</li>
+<li class="story">
+  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%EC%9E%84%EC%9B%90%20%EC%A4%84%EC%A4%84%EC%9D%B4%20%EC%8D%BC%EB%8B%A4%EB%8A%94%E2%80%A6%27%EC%A0%A0%EC%8A%A8%20%ED%99%A9%20%EB%B3%B5%EA%B7%80%20%EC%B4%89%EA%B5%AC%20%EC%84%9C%ED%95%9C%27%20%EC%95%8C%EA%B3%A0%EB%B3%B4%EB%8B%88%22" rel="noopener" target="_blank">엔비디아 임원 줄줄이 썼다는…&#39;젠슨 황 복귀 촉구 서한&#39; 알고보니</a>
+  <p class="meta">한국경제 · 10:25 · <a class="origin" href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFB0elVsc1M4WUhhQ1dMcE9yTURwbjJtamZSem9zbHBXOEpucEdNdGowNG80aVlfMngwZ0hIeWVDNGl0VjUyTnhDTnVVYXJIclMtSmNYakZhQVBFZw?oc=5" rel="noopener" target="_blank">원문</a></p>
+</li>
+</ul>
+<h4 class="more-h">다른 기사</h4>
+<ul class="headlines">
+<li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%EB%A1%9C%EC%9D%B4%ED%84%B0%20%22%27%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%EC%B9%A9%20%EC%9D%98%EC%A1%B4%27%20%E4%B8%AD%20AI%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B7%9C%EB%AA%A8%204%EC%A1%B06%EC%B2%9C%EC%96%B5%20%EC%9D%B4%EC%83%81%22%22" rel="noopener" target="_blank">로이터 &#34;&#39;엔비디아칩 의존&#39; 中 AI프로젝트 규모 4조6천억 이상&#34;</a> <span class="meta">매일경제</span></li><li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%EB%AF%B8%EA%B5%AD%20%EC%A0%84%EC%97%AD%20%EC%9D%B4%EB%A5%99%20%EC%A4%91%EB%8B%A8%EC%97%90%20%EC%9D%B8%EC%B2%9C%20%EC%B6%9C%EB%B0%9C%20%EC%9D%BC%EB%B6%80%20%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%22" rel="noopener" target="_blank">미국 전역 이륙 중단에 인천 출발 일부 항공편 결항</a> <span class="meta">매일경제</span></li><li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%27Arm%20CEO%20%EC%A0%91%EC%B4%89%EC%84%A4%27%EC%97%90%20%22%EB%88%84%EA%B5%AC%EC%99%80%EB%8F%84%20%EC%97%B0%EB%9D%BD%20%EC%95%88%ED%95%B4%22%22" rel="noopener" target="_blank">엔비디아 &#39;Arm CEO 접촉설&#39;에 &#34;누구와도 연락 안해&#34;</a> <span class="meta">연합뉴스</span></li></ul>
+
+    </article>
     <article class="edition">
       <h2 class="ed-h">한 주 정리 판 <span class="muted">10:00</span></h2>
       <ul class="stories">
@@ -388,45 +426,17 @@ table.flows td strong { font-weight: 700; }
 <li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%E2%80%9CAI%20%EA%B1%B0%ED%92%88%20%EA%BA%BC%EC%A7%80%EB%A9%B4%20%ED%95%9C%EA%B5%AD%20%EA%B3%A0%ED%86%B5%EC%8A%A4%EB%9F%AC%EC%9A%B8%20%EA%B2%83%E2%80%A6%EC%96%B8%EC%A0%9C%EC%9D%BC%EC%A7%84%20%EB%AA%B0%EB%9D%BC%E2%80%9D%22" rel="noopener" target="_blank">“AI 거품 꺼지면 한국 고통스러울 것…언제일진 몰라”</a> <span class="meta">헤럴드경제</span></li><li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%ED%95%9C%EA%B0%95%EB%B2%A8%ED%8A%B8%EB%A1%9C%20%ED%95%98%EB%9D%BD%EC%84%B8%20%ED%99%95%EC%82%B0%E2%80%A6%EC%97%B0%EB%A7%90%20%EC%A7%91%EA%B0%92%20%EC%95%88%EC%A0%95%EB%A1%A0%20%ED%9E%98%20%EC%8B%A4%EB%A6%AC%EB%82%98%22" rel="noopener" target="_blank">한강벨트로 하락세 확산…연말 집값 안정론 힘 실리나</a> <span class="meta">뉴시스</span></li></ul>
 
     </article>
-    <article class="edition">
-      <h2 class="ed-h">미국장 판 <span class="muted">09:24</span></h2>
-      <ul class="stories">
-<li class="story lead">
-  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EB%89%B4%EC%9A%95%EC%A6%9D%EC%8B%9C%2C%20%EB%8B%A4%EC%9A%B0%EC%A7%80%EC%88%98%EB%A7%8C%200.1%25%20%EC%83%81%EC%8A%B9%E2%80%A6%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%202%25%E2%86%93%2C%20%ED%95%98%EB%9D%BD%20%EC%A7%80%EC%86%8D%28%EC%A2%85%ED%95%A9%29%22" rel="noopener" target="_blank">뉴욕증시, 다우지수만 0.1% 상승…엔비디아 2%↓, 하락 지속(종합)</a>
-  <ul class="points"><li>미국 뉴욕증시는 젠슨 황 엔비디아 전 최고경영자(CEO) 스캔들의 여파가 이어지면서 주요 지수가 혼조 마감함</li><li>이날 뉴욕증권거래소(NYSE)에서 다우존스30 산업평균지수는 전장보다 <strong>50.46포인트</strong>(<strong>0.10%</strong>) 오른 52,347.55에 마감함</li><li>스탠더드앤드푸어스(S&amp;P) 500지수는 전장보다 <strong>30.73포인트</strong>(<strong>0.40%</strong>) 내린 7,561.67에, 나스닥 종합지수는…</li></ul>
-  <p class="meta">연합뉴스 · 07:14 · <a class="origin" href="https://www.yna.co.kr/view/AKR20261114009551072" rel="noopener" target="_blank">원문</a></p>
-</li>
-<li class="story">
-  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%27%ED%8F%AC%EC%8A%A4%ED%8A%B8%20%EC%A0%A0%EC%8A%A8%20%ED%99%A9%27%20%EC%9D%B8%EC%84%A0%20%EC%9E%A5%EA%B8%B0%ED%99%94%20%EC%A1%B0%EC%A7%90%E2%80%A6%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%22%ED%8A%B9%EC%A0%95%EC%9D%B8%EC%82%AC%20%EC%A0%91%EC%B4%89%20%EC%95%88%ED%95%B4%22%22" rel="noopener" target="_blank">&#39;포스트 젠슨 황&#39; 인선 장기화 조짐…엔비디아 &#34;특정인사 접촉 안해&#34;</a>
-  <ul class="points"><li>황 전 CEO의 갑작스러운 사임 이후 차기 리더십 인선을 서두르기보다 공식 절차를 밟아 신중하게 접근하겠다는 뜻으로 풀이됨</li><li>최종 후계자 윤곽이 드러나기까지 적잖은 시간이 걸릴 전망</li></ul>
-  <p class="meta">머니투데이 · 08:41 · <a class="origin" href="https://www.mt.co.kr/world/2026/11/14/2026111408335577074" rel="noopener" target="_blank">원문</a></p>
-</li>
-<li class="story">
-  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EB%B2%A0%EC%84%A0%ED%8A%B8%2C%20%27%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%EC%B9%A9%20%EB%B0%80%EC%88%98%27%20%EC%9D%98%ED%98%B9%20%EB%9F%AC%ED%8A%B8%EB%8B%89%20%EB%B9%84%ED%8C%90%20%22%EB%A7%A4%EC%9A%B0%20%EC%8B%A4%EB%A7%9D%22%22" rel="noopener" target="_blank">베선트, &#39;엔비디아 칩 밀수&#39; 의혹 러트닉 비판 &#34;매우 실망&#34;</a>
-  <ul class="points"><li>메가스피드는 중국이 엔비디아 칩을 밀수하는 창구 역할을 했다는 의혹을 받는다.</li><li>젠슨황의 내연녀 엘리스 황이 메가스피드 임원으로 근무함</li><li>베선트 장관은 13일(현지시간) 미국 CNBC 인터뷰에서 &#34;미국 재무부, 국방부, 국무부 그리고 미국 무역대표부(USTR) 모두 수개월 동안…</li></ul>
-  <p class="meta">머니투데이 · 08:41 · <a class="origin" href="https://www.mt.co.kr/world/2026/11/14/2026111408310857240" rel="noopener" target="_blank">원문</a></p>
-</li>
-<li class="story">
-  <a class="headline" href="https://search.naver.com/search.naver?where=news&amp;query=%22%EB%89%B4%EC%9A%95%20%EC%A6%9D%EC%8B%9C%20%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%EC%98%81%ED%96%A5%20%EB%82%98%EC%8A%A4%EB%8B%A5%20%EC%A7%80%EC%88%98%20%ED%95%98%EB%9D%BD%20%EB%A7%88%EA%B0%90%22" rel="noopener" target="_blank">뉴욕 증시 엔비디아 영향 나스닥 지수 하락 마감</a>
-  <ul class="points"><li>미국 뉴욕 증시는 13일(현지시각) 엔비디아 주가가 최근 하락세를 이어가면서 나스닥 종합지수가 하락함</li><li>그러나 다른 2개 주요 지수와 함께 나스닥 지수도 주간 기준으로는 여전히 상승세를 유지하고 있음</li><li>미 CNBC에 따르면 기술주 중심의 나스닥 종합지수가 <strong>0.91%</strong> 하락했고, 스탠더드앤드푸어스(S&amp;P) 500 지수는 <strong>0.4%</strong> 떨어짐</li></ul>
-  <p class="meta">뉴시스 · 06:14 · <a class="origin" href="https://www.newsis.com/view/NISX20261114_0003867937" rel="noopener" target="_blank">원문</a></p>
-</li>
-</ul>
-<h4 class="more-h">다른 기사</h4>
-<ul class="headlines">
-<li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%ED%8F%AD%EB%9D%BD%EC%97%90%20%27%EC%A4%8D%EC%A4%8D%27%ED%96%88%EB%8A%94%EB%8D%B0%E2%80%A6%22%EB%8B%B9%EC%9E%A5%20%EB%B9%A0%EC%A0%B8%EB%82%98%EC%99%80%EB%9D%BC%22%20%EA%B0%95%EB%A0%A5%20%EA%B2%BD%EA%B3%A0%22" rel="noopener" target="_blank">엔비디아 폭락에 &#39;줍줍&#39;했는데…&#34;당장 빠져나와라&#34; 강력 경고</a> <span class="meta">한국경제</span></li><li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%EC%97%94%EB%B9%84%EB%94%94%EC%95%84%20%EB%B4%90%EC%A4%80%20%E7%BE%8E%20%EC%83%81%EB%AC%B4%EB%B6%80%20%EC%8B%A4%EC%84%B8...%20%EB%9F%AC%ED%8A%B8%EB%8B%89%EC%9D%98%20%EC%98%A4%EB%A5%B8%ED%8C%94%EC%97%90%20%EC%8F%A0%EB%A6%AC%EB%8A%94%20%EB%88%88%EA%B8%B8%5B%EC%9B%8C%EC%8B%B1%ED%84%B4%EB%82%98%EC%9A%B0%2B%5D%22" rel="noopener" target="_blank">엔비디아 봐준 美 상무부 실세... 러트닉의 오른팔에 쏠리는 눈길[워싱턴나우+]</a> <span class="meta">한국경제</span></li><li><a href="https://search.naver.com/search.naver?where=news&amp;query=%22%27%EC%9B%94%EC%A6%88%20%EC%9A%B0%EC%8A%B9%20%EB%8F%84%EC%A0%84%27%20%EC%A0%A0%EC%A7%80%20%22%EC%83%81%EB%8C%80%20%ED%83%91%C2%B7%EC%A0%95%EA%B8%80%20%EA%B2%BD%EA%B3%84%E2%80%A6%EB%B0%B4%ED%94%BD%20%EC%9E%90%EC%8B%A0%EC%9E%88%EB%8B%A4%22%22" rel="noopener" target="_blank">&#39;월즈 우승 도전&#39; 젠지 &#34;상대 탑·정글 경계…밴픽 자신있다&#34;</a> <span class="meta">매일경제</span></li></ul>
-
-    </article>
     <p class="colophon">요약 줄은 기사 첫머리 문장을 그대로 옮긴 것입니다(AI 요약 아님). 제목은 네이버 뉴스(없으면 네이버 검색), “원문”은 언론사 사이트로 이동합니다. 기사 제목과 내용은 각 언론사의 것입니다.</p>
   </section>
 
   <section id="pane-re" class="pane" role="tabpanel" aria-labelledby="nav-re" hidden>
     <section class="corridor" id="corridor" aria-labelledby="corridor-h">
-      <h2 class="section-h" id="corridor-h">범계역 인근 아파트 <span class="muted">동안구 · 역에서 1km 안 · 가까운 순</span></h2>
+      <h2 class="section-h" id="corridor-h">범계역 인근 아파트 <span class="muted">동안구 · 역 1km 안 · 800세대 이상</span></h2>
       <div class="tabs chips" role="group" aria-label="동 선택" id="corridor-dongs"></div>
+      <div class="corridor-map" id="corridor-map" role="region" aria-label="단지 위치 지도" hidden></div>
       <ul class="corridor-list" id="corridor-list"><li class="empty-note">단지 목록을 불러오는 중…</li></ul>
       <p class="more" id="corridor-more-wrap" hidden><button type="button" class="link" id="corridor-more">더 보기</button></p>
-      <p class="colophon">단지를 누르면 3년 실거래 추이(선: 월별 중위 거래가, 점: 거래 한 건, 막대: 월별 거래 건수)가 열립니다. 가격은 국토부 실거래 신고 기준이며 최근 한두 달은 신고가 덜 들어와 건수가 적게 보일 수 있습니다.</p>
+      <p class="colophon">지도의 점이나 단지를 누르면 3년 실거래 추이(선: 월별 중위 거래가·오른쪽 축, 점: 거래 한 건, 막대: 월별 거래 건수·왼쪽 축)가 열립니다. 면적은 전용면적이고, 평은 전용면적을 3.3058로 나눈 값이라 흔히 말하는 "공급 평형"보다 작게 나옵니다. 가격은 국토부 실거래 신고 기준이며 최근 한두 달은 신고가 덜 들어와 건수가 적게 보일 수 있습니다.</p>
     </section>
     <p class="empty-note">오늘 부동산 판은 아직 발행 전이에요 (저녁 7시, 일요일 특집).</p>
     <section class="trends" aria-labelledby="trends-h">
@@ -646,7 +656,7 @@ table.flows td strong { font-weight: 700; }
 <script>
 (function () {
   var ROOT = "";
-  var STAMP = "2026-11-14T10:00:00+09:00";
+  var STAMP = "2026-11-14T11:24:04.948280+09:00";
   var IS_INDEX = true;
   var CHECK_MS = 5 * 60 * 1000;
   var status = document.getElementById("app-status");
@@ -749,6 +759,7 @@ table.flows td strong { font-weight: 700; }
   var FONT = "'Noto Serif KR','Nanum Myeongjo','Batang',serif";
   var all = [], dong = "전체", shown = PAGE, openRow = null, loading = false;
 
+  function py(m2) { return Math.round(m2 / 3.3058); }  // 전용면적 ㎡ → 평
   function eok(manwon) { return (manwon / 10000).toFixed(manwon >= 100000 ? 1 : 2).replace(/\.?0+$/, "") + "억"; }
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -770,25 +781,28 @@ table.flows td strong { font-weight: 700; }
       dongBox.appendChild(b);
     });
   }
+  function filtered() { return all.filter(function (c) { return dong === "전체" || c.dong === dong; }); }
   function renderList() {
+    drawMap();
     list.textContent = "";
     openRow = null;
-    var rows = all.filter(function (c) { return dong === "전체" || c.dong === dong; });
+    var rows = filtered();
     rows.slice(0, shown).forEach(function (c) { list.appendChild(row(c)); });
     if (!rows.length) list.appendChild(el("li", "empty-note", "해당하는 단지가 없어요."));
     moreWrap.hidden = rows.length <= shown;
   }
   function row(c) {
     var li = el("li", "c-item");
+    li.setAttribute("data-name", c.name);
     var b = el("button", "c-row");
     b.type = "button";
     b.setAttribute("aria-expanded", "false");
     var left = el("span", "c-left");
     left.appendChild(el("span", "c-name", c.name));
-    left.appendChild(el("span", "c-sub", c.dong + " · " + (c.build_year ? c.build_year + "년 · " : "") + "역 " + c.dist + "m"));
+    left.appendChild(el("span", "c-sub", c.dong + " · " + (c.households ? c.households.toLocaleString("ko-KR") + "세대 · " : "") + (c.build_year ? c.build_year + "년 · " : "") + "역 " + c.dist + "m"));
     var right = el("span", "c-right");
     right.appendChild(el("span", "c-price", c.median12 ? eok(c.median12) : "—"));
-    right.appendChild(el("span", "c-sub", c.area + "㎡ 중위 · 1년 " + c.n12 + "건"));
+    right.appendChild(el("span", "c-sub", c.area + "㎡(" + py(c.area) + "평) 중위 · 1년 " + c.n12 + "건"));
     b.appendChild(left);
     b.appendChild(right);
     b.addEventListener("click", function () { toggle(li, b, c); });
@@ -803,7 +817,7 @@ table.flows td strong { font-weight: 700; }
     btn.setAttribute("aria-expanded", "true");
     var box = el("div", "c-detail");
     li.appendChild(box);
-    openRow = { li: li, btn: btn, box: box, chart: null };
+    openRow = { li: li, btn: btn, box: box, charts: [] };
     var areas = {};
     c.deals.forEach(function (d) { areas[d[1]] = (areas[d[1]] || 0) + 1; });
     var keys = Object.keys(areas).sort(function (a, b) { return areas[b] - areas[a]; });
@@ -824,7 +838,7 @@ table.flows td strong { font-weight: 700; }
       recent(table, ds);
     }
     keys.forEach(function (a) {
-      var b = el("button", null, a + "㎡ (" + areas[a] + ")");
+      var b = el("button", null, a + "㎡ · " + py(+a) + "평 (" + areas[a] + "건)");
       b.type = "button";
       b.setAttribute("data-area", a);
       b.addEventListener("click", function () { pick(a); });
@@ -834,7 +848,7 @@ table.flows td strong { font-weight: 700; }
     li.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
   function close(r) {
-    if (r.chart) { try { r.chart.remove(); } catch (e) {} }
+    removeCharts(r);
     if (r.box.parentNode) r.box.parentNode.removeChild(r.box);
     r.btn.setAttribute("aria-expanded", "false");
     if (openRow === r) openRow = null;
@@ -858,37 +872,64 @@ table.flows td strong { font-weight: 700; }
       dots: days.map(function (t) { var v = byDay[t]; return { time: t, value: v.reduce(function (a, b) { return a + b; }, 0) / v.length / 10000 }; })
     };
   }
+  function removeCharts(r) {
+    (r.charts || []).forEach(function (c) { try { c.remove(); } catch (e) {} });
+    r.charts = [];
+  }
+  function baseOpts(width, height, showTime) {
+    return {
+      width: width, height: height,
+      layout: { background: { type: "solid", color: PAPER }, textColor: INK, fontFamily: FONT, fontSize: 11, attributionLogo: false },
+      grid: { vertLines: { color: GRID }, horzLines: { color: GRID } },
+      rightPriceScale: { borderColor: GRID, minimumWidth: 56 },
+      timeScale: { borderColor: GRID, visible: showTime },
+      handleScroll: { vertTouchDrag: false },
+      localization: { locale: "ko-KR" }
+    };
+  }
+  // 위: 가격(선 = 월별 중위가, 점 = 거래 한 건), 아래: 월별 거래 건수 — 각자 오른쪽 축, 날짜 축은 함께 움직임
   function draw(r, plot, legend, ds, area) {
-    if (r.chart) { try { r.chart.remove(); } catch (e) {} r.chart = null; }
+    removeCharts(r);
     plot.textContent = "";
     var hi = Math.max.apply(null, ds.map(function (d) { return d[3]; }));
     var lo = Math.min.apply(null, ds.map(function (d) { return d[3]; }));
-    legend.textContent = area + "㎡ · " + ds.length + "건 · 최저 " + eok(lo) + " · 최고 " + eok(hi);
+    legend.textContent = "전용 " + area + "㎡(" + py(+area) + "평) · 3년 " + ds.length + "건 · 최저 " + eok(lo) + " · 최고 " + eok(hi);
     var LW = window.LightweightCharts;
     if (!LW) { plot.textContent = "차트를 불러오지 못했어요"; plot.className = "c-plot failed"; return; }
     var s = series(ds);
-    var chart = LW.createChart(plot, {
-      width: plot.clientWidth || 320, height: 220,
-      layout: { background: { type: "solid", color: PAPER }, textColor: INK, fontFamily: FONT, fontSize: 11, attributionLogo: false },
-      grid: { vertLines: { color: GRID }, horzLines: { color: GRID } },
-      rightPriceScale: { borderColor: GRID, scaleMargins: { top: 0.08, bottom: 0.3 } },
-      timeScale: { borderColor: GRID },
-      handleScroll: { vertTouchDrag: false },
-      localization: { locale: "ko-KR" }
-    });
-    r.chart = chart;
+    var top = el("div"), bottom = el("div"), cap = el("p", "c-vol-cap", "월별 거래 건수");
+    plot.appendChild(top); plot.appendChild(cap); plot.appendChild(bottom);
+    var w = plot.clientWidth || 320;
+    var price = LW.createChart(top, baseOpts(w, 170, false));
+    var vol = LW.createChart(bottom, baseOpts(w, 90, true));
+    price.priceScale("right").applyOptions({ scaleMargins: { top: 0.08, bottom: 0.08 } });
+    vol.priceScale("right").applyOptions({ scaleMargins: { top: 0.12, bottom: 0 } });
+    r.charts = [price, vol];
     var fmtE = { type: "custom", formatter: function (v) { return v.toFixed(1) + "억"; } };
-    var bars = chart.addHistogramSeries({ color: "rgba(138,129,114,0.45)", priceScaleId: "cnt", lastValueVisible: false, priceLineVisible: false,
-      priceFormat: { type: "custom", formatter: function (v) { return Math.round(v) + "건"; } } });
-    chart.priceScale("cnt").applyOptions({ scaleMargins: { top: 0.78, bottom: 0 } });
-    bars.setData(s.cnt);
-    var dots = chart.addLineSeries({ color: GRAY, lineVisible: false, pointMarkersVisible: true, pointMarkersRadius: 2.5,
+    var dots = price.addLineSeries({ color: GRAY, lineVisible: false, pointMarkersVisible: true, pointMarkersRadius: 2.5,
       lastValueVisible: false, priceLineVisible: false, crosshairMarkerVisible: false, priceFormat: fmtE });
     dots.setData(s.dots);
-    var line = chart.addLineSeries({ color: INK, lineWidth: 2, lastValueVisible: true, priceLineVisible: false, priceFormat: fmtE });
+    var line = price.addLineSeries({ color: INK, lineWidth: 2, lastValueVisible: true, priceLineVisible: false, priceFormat: fmtE });
     line.setData(s.med);
-    chart.timeScale().fitContent();
-    if (window.ResizeObserver) new ResizeObserver(function () { if (r.chart === chart) chart.resize(plot.clientWidth, 220); }).observe(plot);
+    var bars = vol.addHistogramSeries({ color: "rgba(138,129,114,0.7)", lastValueVisible: false, priceLineVisible: false,
+      priceFormat: { type: "custom", minMove: 1, formatter: function (v) { return Math.round(v) + "건"; } } });
+    bars.setData(s.cnt);
+    price.timeScale().fitContent();
+    vol.timeScale().fitContent();
+    var syncing = false;
+    function link(from, to) {
+      from.timeScale().subscribeVisibleTimeRangeChange(function (range) {
+        if (syncing || !range) return;
+        syncing = true;
+        try { to.timeScale().setVisibleRange(range); } catch (e) {}
+        syncing = false;
+      });
+    }
+    link(price, vol); link(vol, price);
+    if (window.ResizeObserver) new ResizeObserver(function () {
+      if (r.charts[0] !== price) return;
+      price.resize(plot.clientWidth, 170); vol.resize(plot.clientWidth, 90);
+    }).observe(plot);
   }
   function recent(table, ds) {
     table.textContent = "";
@@ -904,12 +945,78 @@ table.flows td strong { font-weight: 700; }
     });
   }
 
+  // ---- 지도 (Leaflet + OpenStreetMap, 부동산 탭을 열 때만 불러옴) ----
+  var LEAFLET_JS = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+  var LEAFLET_CSS = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+  var mapBox = document.getElementById("corridor-map");
+  var map = null, layer = null, center = null, leafletLoading = null;
+  function loadLeaflet() {
+    if (window.L) return Promise.resolve();
+    if (leafletLoading) return leafletLoading;
+    leafletLoading = new Promise(function (ok, bad) {
+      var css = document.createElement("link");
+      css.rel = "stylesheet"; css.href = LEAFLET_CSS; css.crossOrigin = "anonymous";
+      css.integrity = "sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb";
+      document.head.appendChild(css);
+      var js = document.createElement("script");
+      js.src = LEAFLET_JS; js.crossOrigin = "anonymous";
+      js.integrity = "sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO";
+      js.onload = ok; js.onerror = bad;
+      document.head.appendChild(js);
+    });
+    return leafletLoading;
+  }
+  function openByName(name) {
+    var rows = filtered(), i = -1;
+    for (var k = 0; k < rows.length; k++) if (rows[k].name === name) i = k;
+    if (i < 0) return;
+    if (i >= shown) { shown = i + 1; renderList(); }
+    var items = list.querySelectorAll("li.c-item"), li = null;
+    for (var j = 0; j < items.length; j++) if (items[j].getAttribute("data-name") === name) li = items[j];
+    if (!li) return;
+    var b = li.querySelector(".c-row");
+    if (b.getAttribute("aria-expanded") !== "true") b.click();
+    li.scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+  function drawMap() {
+    if (!mapBox) return;
+    loadLeaflet().then(function () {
+      var L = window.L;
+      if (!map) {
+        mapBox.hidden = false;
+        map = L.map(mapBox, { scrollWheelZoom: false });
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 18, attribution: "&copy; OpenStreetMap"
+        }).addTo(map);
+        if (center) L.circleMarker([center.lat, center.lng], { radius: 7, color: "#b23a2e", weight: 2, fillColor: "#b23a2e", fillOpacity: 0.9 })
+          .addTo(map).bindTooltip(center.name, { permanent: true, direction: "top", offset: [0, -6] });
+      }
+      if (layer) map.removeLayer(layer);
+      layer = L.layerGroup().addTo(map);
+      var pts = [];
+      filtered().forEach(function (c) {
+        if (c.lat == null) return;
+        pts.push([c.lat, c.lng]);
+        L.circleMarker([c.lat, c.lng], { radius: 6, color: INK, weight: 1.5, fillColor: PAPER, fillOpacity: 1 })
+          .addTo(layer)
+          .bindTooltip(c.name + (c.median12 ? " · " + eok(c.median12) : ""), { direction: "top" })
+          .on("click", function () { openByName(c.name); });
+      });
+      if (center) pts.push([center.lat, center.lng]);
+      // 지도 칸의 실제 크기를 잡은 뒤에 범위를 맞춰야 너무 멀리서 보이지 않습니다.
+      setTimeout(function () {
+        map.invalidateSize();
+        if (pts.length) map.fitBounds(pts, { padding: [18, 18], maxZoom: 16 });
+      }, 60);
+    }).catch(function () { mapBox.hidden = true; });
+  }
+
   // ---- 불러오기: 부동산 탭을 처음 열 때 ----
   function load() {
     if (all.length || loading) return;
     loading = true;
     fetch(DATA_URL, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (d) { all = d.complexes || []; renderDongs(); renderList(); })
+      .then(function (d) { all = d.complexes || []; center = d.center || null; renderDongs(); renderList(); })
       .catch(function () { list.textContent = ""; list.appendChild(el("li", "empty-note", "단지 목록을 불러오지 못했어요.")); })
       .then(function () { loading = false; });
   }
