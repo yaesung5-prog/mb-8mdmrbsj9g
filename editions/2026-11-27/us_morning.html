@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>나의 시장일보 11월 27일 금요일</title>
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="icon" href="../../icon-192.png">
+<link rel="apple-touch-icon" href="../../icon-192.png">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2F4F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)">
+<script>
+  // 저장된 화면 테마를 그리기 전에 적용합니다 (깜빡임 방지).
+  try {
+    var t = localStorage.getItem("mb-theme");
+    if (t === "light" || t === "dark") {
+      document.documentElement.setAttribute("data-theme", t);
+      document.querySelector('meta[name="color-scheme"]').setAttribute("content", t);
+    }
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;family=Noto+Serif+KR:wght@700;900&amp;display=swap">
+<style>
+:root {
+  --ink: #1d1a16;
+  --paper: #f4efe4;
+  --muted: #675d4f;
+  --rule: #cfc6b5;
+  --up: #b23a2e;
+  --down: #2f5a9e;
+  --text2: #3b352d;
+  --field: #fffdf8;
+  --tint: rgba(29, 26, 22, 0.06);
+  --map-bg: #e9e3d6;
+  --legend-bg: rgba(244, 239, 228, 0.8);
+  color-scheme: light;
+  --serif: "Noto Serif KR", "Nanum Myeongjo", "Batang", "Times New Roman", serif;
+  --figures: Georgia, "Times New Roman", "Noto Serif KR", serif;
+}
+/* 다크 모드: 휴대폰 설정을 따르되(자동), 설정 탭에서 라이트/다크를 고르면 그걸 따릅니다. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --ink: #ece6da;
+  --paper: #16140f;
+  --muted: #a69c8c;
+  --rule: #3b362e;
+  --up: #ff7366;
+  --down: #78a8ff;
+  --text2: #d2cabb;
+  --field: #221f19;
+  --tint: rgba(236, 230, 218, 0.08);
+  --map-bg: #2a2721;
+  --legend-bg: rgba(22, 20, 15, 0.82);
+  color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #ece6da;
+  --paper: #16140f;
+  --muted: #a69c8c;
+  --rule: #3b362e;
+  --up: #ff7366;
+  --down: #78a8ff;
+  --text2: #d2cabb;
+  --field: #221f19;
+  --tint: rgba(236, 230, 218, 0.08);
+  --map-bg: #2a2721;
+  --legend-bg: rgba(22, 20, 15, 0.82);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--serif); font-size: 16px; line-height: 1.75;
+  word-break: keep-all; overflow-wrap: anywhere;
+}
+a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--ink); }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.page { max-width: 1120px; margin: 0 auto; padding: 20px 24px 40px; }
+
+.up { color: var(--up); }
+.down { color: var(--down); }
+.flat, .muted { color: var(--muted); }
+
+/* masthead */
+.masthead {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  border-bottom: 3px double var(--ink); padding-bottom: 8px;
+}
+.masthead h1 { margin: 0; font-size: 40px; line-height: 1.15; font-weight: 900; letter-spacing: -0.02em; }
+.masthead .issue { margin: 0; font-size: 14px; text-align: right; }
+.note { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+.lede { margin: 16px 0 0; font-size: 30px; line-height: 1.35; font-weight: 800; letter-spacing: -0.01em; max-width: 24em; }
+
+/* numbers board */
+.board {
+  list-style: none; margin: 16px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+}
+.board li { padding: 10px 12px; border-right: 1px solid var(--rule); }
+.board li:last-child { border-right: 0; }
+.board .label { display: block; font-size: 13px; color: var(--muted); line-height: 1.4; }
+.board .value { display: block; font-family: var(--figures); font-size: 24px; font-weight: 700; line-height: 1.3; }
+.board .change { display: block; font-size: 14px; font-weight: 600; }
+.board .value.empty { font-family: var(--serif); font-size: 15px; font-weight: 400; color: var(--muted); }
+
+.board .spark-wrap { display: block; margin-top: 6px; max-width: 120px; }
+
+/* trends */
+.trends { margin-top: 28px; }
+.trends > header { border-bottom: 1px solid var(--ink); margin-bottom: 8px; }
+.trends h2 { margin: 0; font-size: 15px; font-weight: 800; line-height: 1.6; }
+.trends > header p { margin: 0 0 6px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.trends h3 { margin: 20px 0 4px; font-size: 14px; font-weight: 800; border-bottom: 1px solid var(--rule); }
+.trend-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px 28px; margin-top: 10px; }
+.trend-grid figure { margin: 0; min-width: 0; }
+.trend-grid figcaption { font-size: 14px; font-weight: 700; line-height: 1.5; margin-bottom: 4px; }
+
+/* columns */
+.columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 20px; }
+.column { padding: 0 20px; border-right: 1px solid var(--rule); min-width: 0; }
+.column:first-child { padding-left: 0; }
+.column:last-child { padding-right: 0; border-right: 0; }
+.column > header { border-bottom: 1px solid var(--ink); margin-bottom: 4px; }
+.column h2 { margin: 0; font-size: 15px; font-weight: 800; line-height: 1.6; }
+.column > header p { margin: 0 0 6px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.edition { padding: 14px 0 6px; border-bottom: 1px solid var(--rule); }
+.edition:last-child { border-bottom: 0; }
+.edition h3 { margin: 0; font-size: 20px; line-height: 1.4; font-weight: 800; }
+.edition .stamp { margin: 0 0 2px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.edition h4 { margin: 14px 0 4px; font-size: 14px; font-weight: 800; border-bottom: 1px solid var(--rule); }
+.facts { margin: 8px 0 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.7; }
+.facts li { display: flex; justify-content: space-between; gap: 12px; }
+.facts .figure { font-family: var(--figures); white-space: nowrap; }
+
+/* 기사: 제목 + 요약 줄(개조식) */
+.stories { list-style: none; margin: 6px 0 0; padding: 0; }
+.stories > .story { padding: 14px 0; border-top: 1px solid var(--rule); }
+.stories > .story:first-child { border-top: 0; padding-top: 4px; }
+.stories .headline { display: block; font-weight: 700; font-size: 17px; line-height: 1.45; color: var(--ink); text-decoration: none; }
+.stories .lead .headline { font-size: 20px; }
+.stories .points { list-style: none; margin: 8px 0 0; padding: 0; }
+.stories .points li { position: relative; padding-left: 14px; margin: 4px 0; font-size: 14.5px; line-height: 1.6; color: var(--text2); }
+.stories .points li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 5px; height: 5px; background: var(--ink); }
+.stories .points strong { font-weight: 700; color: var(--ink); }
+.stories .sum { margin: 6px 0 0; font-size: 14.5px; line-height: 1.65; color: var(--text2); }
+.stories .meta { margin: 8px 0 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+.stories .origin { color: var(--muted); text-decoration: underline; }
+.stories.compact > .story { padding: 10px 0; }
+.stories.compact .headline { font-size: 16px; }
+.more-h { margin: 14px 0 4px; font-size: 13px; color: var(--muted); font-weight: 700; }
+.headlines { list-style: none; margin: 0; padding: 0; }
+.headlines li { padding: 7px 0; border-top: 1px solid var(--rule); font-size: 15px; line-height: 1.5; }
+.headlines a { color: var(--ink); text-decoration: none; }
+.headlines .meta { font-size: 12px; color: var(--muted); }
+.ed-h { margin: 22px 0 4px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); font-size: 15px; }
+.edition:first-child .ed-h { margin-top: 6px; }
+table.deals td.price { font-weight: 700; }
+.empty-note { margin: 8px 0; font-size: 14px; color: var(--muted); }
+
+/* real estate tables */
+.table-wrap { overflow-x: auto; }
+table.deals { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.5; }
+table.deals caption { text-align: left; }
+table.deals th { text-align: left; font-weight: 700; color: var(--muted); padding: 4px 6px 4px 0; border-bottom: 1px solid var(--ink); }
+table.deals td { padding: 5px 6px 5px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.deals .num { text-align: right; font-family: var(--figures); white-space: nowrap; }
+.disclaimer { margin: 12px 0 8px; font-size: 13px; color: var(--muted); }
+
+.colophon { margin-top: 28px; padding-top: 8px; border-top: 3px double var(--ink); font-size: 13px; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .column { padding: 0 14px; }
+}
+@media (max-width: 639px) {
+  .trend-grid { grid-template-columns: minmax(0, 1fr); }
+  .page { padding: 14px 16px 32px; }
+  .masthead h1 { font-size: 30px; }
+  .masthead .issue { text-align: left; }
+  .lede { font-size: 24px; }
+  .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .board li:nth-child(2n) { border-right: 0; }
+  .board li { border-bottom: 1px solid var(--rule); }
+  .columns { grid-template-columns: minmax(0, 1fr); }
+  .column, .column:first-child, .column:last-child {
+    padding: 14px 0 0; border-right: 0; border-top: 1px solid var(--ink); margin-top: 14px;
+  }
+  .column:first-child { border-top: 0; margin-top: 0; }
+}
+
+/* lightweight charts */
+.lwc-fig { margin: 14px 0 0; min-width: 0; }
+.lwc-fig figcaption { font-size: 14px; font-weight: 700; line-height: 1.5; margin-bottom: 4px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
+.tabs button {
+  font: inherit; font-size: 14px; line-height: 1.2; color: var(--ink); background: transparent;
+  border: 1px solid var(--rule); border-radius: 0; padding: 8px 12px; min-height: 40px; cursor: pointer;
+}
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.lwc { position: relative; background: var(--paper); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); min-width: 0; }
+.lwc .plot { height: 380px; width: 100%; }
+.lwc .plot.short { height: 260px; }
+.lwc .legend {
+  position: absolute; z-index: 2; left: 6px; top: 4px; right: 6px; pointer-events: none;
+  font-size: 12px; line-height: 1.5; color: var(--ink); background: var(--legend-bg);
+  font-family: var(--figures);
+}
+.lwc .legend span { white-space: nowrap; }
+.lwc.failed { padding: 28px 12px; text-align: center; color: var(--muted); font-size: 14px; }
+
+/* flows table */
+table.flows { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 14px; }
+table.flows th, table.flows td { padding: 4px 0; border-bottom: 1px solid var(--rule); font-weight: 400; text-align: left; }
+table.flows thead th { font-size: 13px; color: var(--muted); }
+table.flows .num { text-align: right; font-family: var(--figures); white-space: nowrap; }
+table.flows td strong { font-weight: 700; }
+.facts li.sub { margin-top: -4px; font-size: 13px; }
+.facts .figure strong { font-weight: 700; }
+
+/* 실시간 */
+.live { margin-top: 8px; }
+.live-table { width: 100%; border-collapse: collapse; }
+.live-table th { font-size: 13px; font-weight: 400; color: var(--muted); text-align: right; padding: 8px 6px; border-bottom: 1px solid var(--ink); }
+.live-table th:first-child, .live-table td:first-child { text-align: left; }
+.live-table td { padding: 10px 6px; border-bottom: 1px solid var(--rule); text-align: right; font-size: 15px; }
+.live-table td.px { font-family: var(--figures); font-size: 18px; font-weight: 700; white-space: nowrap; }
+.live-table td.chg .amt { display: block; font-size: 13px; font-weight: 400; }
+.live-table td.chg { font-weight: 600; white-space: nowrap; }
+.live-table tr.flash td.px { background: var(--tint); transition: background 0.6s; }
+.live-table .rt { display: inline-block; margin-left: 6px; font-size: 11px; color: var(--up); border: 1px solid var(--up); padding: 0 4px; line-height: 1.5; vertical-align: 2px; }
+.board .after { display: block; font-size: 12px; line-height: 1.5; }
+.app-status { margin: 6px 0 0; font-size: 12px; color: var(--muted); text-align: right; min-height: 1.5em; }
+.app-status.offline { color: var(--up); }
+
+/* ---- 앱 레이아웃: 하단 탭 ---- */
+.page.app { padding-bottom: 84px; }
+.bottom-nav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  display: flex; background: var(--paper); border-top: 2px solid var(--ink);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.bottom-nav button {
+  flex: 1; min-height: 56px; font: inherit; font-size: 15px; font-weight: 700; color: var(--muted);
+  background: none; border: 0; border-top: 3px solid transparent; margin-top: -2px; cursor: pointer;
+}
+.bottom-nav button[aria-selected="true"] { color: var(--ink); border-top-color: var(--ink); }
+.bottom-nav button:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+.pane[hidden] { display: none; }
+.section-h { margin: 24px 0 8px; font-size: 18px; font-weight: 900; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+.section-h .muted { font-size: 13px; font-weight: 400; }
+.hint { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+
+/* 숫자판 칸: 누를 수 있는 칸 */
+.board li { padding: 0; }
+.board .cell { display: block; width: 100%; padding: 10px 12px; text-align: left; font: inherit; color: inherit; background: none; border: 0; }
+.board button.cell { cursor: pointer; }
+.board button.cell:active { background: var(--tint); }
+.board button.cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+
+/* 차트 종목 칩: 가로 스크롤 */
+.chips { display: flex; gap: 6px; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+.chips button { flex: 0 0 auto; }
+
+.more { margin: 4px 0 0; text-align: right; }
+.link { font: inherit; font-size: 14px; color: var(--ink); background: none; border: 0; padding: 8px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.edition.brief { margin-top: 20px; }
+
+/* 부동산 지역 카드 */
+.region-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); }
+.region-cards li { padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+.region-cards li:nth-child(odd) { border-right: 1px solid var(--rule); }
+.region-cards .label { display: block; font-size: 13px; color: var(--muted); }
+.region-cards .value { display: block; font-family: var(--figures); font-size: 22px; font-weight: 700; line-height: 1.3; }
+.region-cards .change { display: block; font-size: 13px; font-weight: 600; }
+.region-cards .sub { display: block; font-size: 12px; color: var(--muted); }
+.chips { scrollbar-width: none; } .chips::-webkit-scrollbar { display: none; }
+
+/* 실시간: 검색 + 내 종목 */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.stock-search { position: relative; margin: 8px 0 4px; }
+.stock-search input {
+  width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; padding: 10px 12px; min-height: 44px;
+  color: var(--ink); background: var(--field); border: 1px solid var(--ink); border-radius: 0;
+}
+.stock-search input:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.stock-results { list-style: none; margin: 0; padding: 0; }
+.stock-results li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 2px; border-bottom: 1px solid var(--rule); }
+.stock-results .name { font-weight: 700; }
+.stock-results .code { font-size: 12px; color: var(--muted); margin-left: 6px; }
+.stock-results button, .live-table .rm {
+  font: inherit; font-size: 13px; min-height: 36px; padding: 4px 12px; cursor: pointer;
+  color: var(--ink); background: none; border: 1px solid var(--ink);
+}
+.stock-results button[disabled] { color: var(--muted); border-color: var(--rule); cursor: default; }
+.live-head { display: flex; align-items: flex-end; justify-content: space-between; }
+.live-head .section-h { flex: 1; }
+.live-head .link { margin: 0 0 6px 12px; }
+.live-table .rm { margin-left: 8px; padding: 2px 10px; color: var(--up); border-color: var(--up); }
+.live-table td.empty-row { color: var(--muted); font-size: 14px; text-align: left; }
+
+/* 부동산: 범계역 인근 단지 목록 + 펼치는 차트 */
+.corridor { margin-top: 18px; }
+.corridor .chips { margin: 4px 0 6px; }
+.corridor-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.c-item { border-bottom: 1px solid var(--rule); }
+.c-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; width: 100%; padding: 10px 2px; background: none; border: 0; font: inherit; color: var(--ink); text-align: left; cursor: pointer; }
+.c-row[aria-expanded="true"] { background: var(--tint); }
+.c-row:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.c-left, .c-right { display: flex; flex-direction: column; min-width: 0; }
+.c-right { text-align: right; flex: 0 0 auto; }
+.c-name { font-size: 15.5px; font-weight: 700; line-height: 1.4; }
+.c-price { font-family: var(--figures); font-size: 17px; font-weight: 700; }
+.c-sub { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.c-detail { padding: 4px 0 12px; }
+.c-legend { margin: 2px 0 6px; font-size: 12.5px; color: var(--muted); }
+.c-plot { width: 100%; }
+.c-vol-cap { margin: 6px 0 2px; font-size: 11.5px; color: var(--muted); }
+.c-plot.failed { height: auto; font-size: 13px; color: var(--muted); }
+.c-deals { width: 100%; margin-top: 8px; border-collapse: collapse; font-size: 13px; }
+.c-deals th { text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 4px 0; }
+.c-deals td { padding: 4px 0; border-bottom: 1px solid var(--rule); font-family: var(--figures); }
+.c-deals td.price { font-weight: 700; text-align: right; }
+.c-deals th:last-child { text-align: right; }
+.c-deals caption { text-align: left; font-weight: 700; padding: 6px 0 2px; }
+.c-deals .c-more { width: 100%; min-height: 36px; margin-top: 4px; border: 1px solid var(--rule); border-radius: 10px; background: transparent; color: var(--ink); font: inherit; font-weight: 600; cursor: pointer; }
+.corridor-map { height: 260px; margin: 6px 0 10px; border: 1px solid var(--rule); background: var(--map-bg); z-index: 0; }
+.corridor-map .leaflet-tooltip { font-family: var(--serif); font-size: 12px; }
+.status-row { display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-top: 6px; }
+.status-row .app-status { margin: 0; }
+.refresh-btn { font: inherit; font-size: 12px; color: var(--ink); background: none; border: 1px solid var(--rule); border-radius: 14px; padding: 4px 10px; cursor: pointer; }
+.refresh-btn:active { background: var(--tint); }
+.ptr { height: 0; overflow: hidden; text-align: center; font-size: 12px; color: var(--muted); line-height: 2; transition: height .15s; }
+.ptr.on { transition: none; }
+
+/* 다크 모드 지도: 밝은 지도 타일을 어둡게 뒤집어 점(밝은 색)이 잘 보이게 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .corridor-map .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9); }
+}
+:root[data-theme="dark"] .corridor-map .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9); }
+.leaflet-container .leaflet-control-attribution { background: var(--legend-bg); color: var(--muted); }
+.leaflet-container .leaflet-control-attribution a { color: var(--muted); }
+
+/* 설정 탭 */
+.settings { margin-top: 8px; }
+.settings fieldset { border: 0; margin: 0; padding: 0; }
+.settings legend { font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+.theme-opts { display: grid; gap: 8px; }
+.theme-opts label { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--rule); cursor: pointer; }
+.theme-opts input { accent-color: var(--ink); width: 18px; height: 18px; }
+.theme-opts .sub { display: block; font-size: 12.5px; color: var(--muted); }
+.settings .about { margin-top: 20px; font-size: 13px; color: var(--muted); }
+/* 숫자판 작은 추이선: 테마 색(다크 모드에서 더 밝은 빨강·파랑)으로 */
+.spark [stroke="#b23a2e"] { stroke: var(--up); }
+.spark [fill="#b23a2e"] { fill: var(--up); }
+.spark [stroke="#2f5a9e"] { stroke: var(--down); }
+.spark [fill="#2f5a9e"] { fill: var(--down); }
+
+/* 시장 탭 맨 위: 오늘 일정 */
+.today { margin-top: 10px; }
+.agenda { list-style: none; margin: 4px 0 0; padding: 0; border-top: 1px solid var(--ink); }
+.agenda li { display: grid; grid-template-columns: 3.4em 3.6em 1fr; align-items: baseline; gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+.agenda .t { font-family: var(--figures); font-weight: 700; }
+.agenda .tag { font-size: 11.5px; text-align: center; border: 1px solid var(--rule); padding: 1px 0; color: var(--muted); }
+.agenda .tag-kr { color: var(--up); border-color: var(--up); }
+.agenda .tag-us { color: var(--down); border-color: var(--down); }
+.agenda .tag-re { color: var(--ink); border-color: var(--ink); }
+.agenda li.high .n { font-weight: 700; }
+.agenda .star { color: var(--up); font-size: 12px; }
+.agenda li.past { opacity: 0.45; }
+.agenda li.next .t::after { content: " 다음"; font-family: var(--serif); font-size: 11px; font-weight: 700; color: var(--up); }
+.why { margin-bottom: 6px; }
+
+/* ===== 가독성 개선 (design-qa 점검 반영) ===== */
+:root {
+  --sans: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --figures: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --up-bg: rgba(178, 58, 46, 0.07);
+  --down-bg: rgba(47, 90, 158, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --up-bg: rgba(255, 115, 102, 0.16); --down-bg: rgba(120, 168, 255, 0.16); }
+}
+:root[data-theme="dark"] { --up-bg: rgba(255, 115, 102, 0.16); --down-bg: rgba(120, 168, 255, 0.16); }
+
+/* 본문은 고딕, 신문 느낌은 제목에만 (명조) */
+body { font-family: var(--sans); line-height: 1.65; }
+.masthead h1, .section-h, .ed-h, .stories .headline, .lwc-fig figcaption { font-family: var(--serif); }
+.board .value.empty { font-family: var(--sans); }
+.agenda li.next .t::after, .corridor-map .leaflet-tooltip { font-family: var(--sans); }
+
+/* 숫자는 고정 폭 — 값이 바뀌어도 좌우로 흔들리지 않게 */
+.board .value, .board .change, .board .after, .figure, .num, td.px, td.chg, .c-price, .c-deals td,
+.agenda .t, .region-cards .value, .stories .points strong { font-variant-numeric: tabular-nums; }
+
+/* 숫자판: 등락률에 옅은 빨강/파랑 바탕 */
+.board .change.up, .board .change.down {
+  display: inline-block; margin-top: 2px; padding: 1px 7px; border-radius: 4px; font-weight: 700;
+}
+.board .change.up { background: var(--up-bg); }
+.board .change.down { background: var(--down-bg); }
+.board .value { letter-spacing: -0.01em; }
+
+/* 섹션 구분: 위 여백을 넉넉히 */
+.section-h { margin-top: 34px; }
+.today .section-h:first-child { margin-top: 14px; }
+
+/* 하단 탭에 가려지지 않게 */
+html { scroll-padding-bottom: 96px; scroll-padding-top: 12px; }
+.page.app { padding-bottom: 104px; }
+
+/* 작은 링크는 누르는 영역을 넓게 (보이는 크기는 그대로) */
+.stories .meta a, .headlines a, .links a { display: inline-block; padding: 6px 4px; margin: -6px -4px; }
+.headlines li { padding: 9px 0; }
+
+/* 지도 출처 글씨: 다크 모드에서도 읽히게 */
+#corridor-map .leaflet-control-attribution { background: var(--legend-bg) !important; color: var(--text2) !important; font-size: 11px; }
+#corridor-map .leaflet-control-attribution a { color: var(--text2) !important; display: inline-block; padding: 6px 2px; margin: -6px 0; }
+
+/* 맨 위로 버튼 */
+.to-top {
+  position: fixed; right: 14px; bottom: calc(70px + env(safe-area-inset-bottom)); z-index: 11;
+  font: inherit; font-size: 13px; font-weight: 700; color: var(--paper); background: var(--ink);
+  border: 0; border-radius: 18px; padding: 8px 14px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); cursor: pointer;
+}
+
+/* ===== 카드 디자인: 라이트 = A안(밝은 회색 + 흰 카드), 다크 = B안(어두운 남색) ===== */
+:root {
+  --bg: #F2F4F6; --paper: #FFFFFF; --ink: #191F28; --muted: #6B7684; --rule: #E5E8EB;
+  --up: #E42939; --down: #1B64DA; --text2: #333D4B; --field: #FFFFFF; --tint: rgba(0, 0, 0, 0.04);
+  --map-bg: #E8EBEF; --legend-bg: rgba(255, 255, 255, 0.85);
+  --up-bg: #FDE8EA; --down-bg: #E8F0FD; --up-bg2: #F9CDD2; --down-bg2: #C9DBFA;
+  --card-line: transparent; --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --serif: var(--sans);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --bg: #0B1220; --paper: #141C2E; --ink: #E6EAF2; --muted: #8A96AD; --rule: #1F2A40;
+  --up: #FF5C6C; --down: #4C9BFF; --text2: #C5CDDC; --field: #141C2E; --tint: rgba(255, 255, 255, 0.06);
+  --map-bg: #1A2336; --legend-bg: rgba(20, 28, 46, 0.85);
+  --up-bg: #3A1620; --down-bg: #12284A; --up-bg2: #5A1E2B; --down-bg2: #173A6E;
+  --card-line: #1F2A40; --card-shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1220; --paper: #141C2E; --ink: #E6EAF2; --muted: #8A96AD; --rule: #1F2A40;
+  --up: #FF5C6C; --down: #4C9BFF; --text2: #C5CDDC; --field: #141C2E; --tint: rgba(255, 255, 255, 0.06);
+  --map-bg: #1A2336; --legend-bg: rgba(20, 28, 46, 0.85);
+  --up-bg: #3A1620; --down-bg: #12284A; --up-bg2: #5A1E2B; --down-bg2: #173A6E;
+  --card-line: #1F2A40; --card-shadow: none;
+}
+body { background: var(--bg); font-family: var(--sans); }
+.page { max-width: 640px; }
+.masthead { border-bottom: 0; padding: 4px 4px 0; align-items: center; }
+.masthead h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+.masthead .issue { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+.colophon { border-top: 1px solid var(--rule); }
+
+/* 카드 */
+.card, .pane > .edition, .pane > .corridor, .pane > .trends, .settings fieldset {
+  background: var(--paper); border: 1px solid var(--card-line); box-shadow: var(--card-shadow);
+  border-radius: 16px; padding: 16px; margin: 12px 0 0;
+}
+.pane > .edition:last-child { border-bottom: 1px solid var(--card-line); }
+.card > .section-h:first-child, .pane > .corridor > .section-h:first-child, .card-h {
+  margin: 0 0 10px; border: 0; padding: 0; font-size: 15.5px; font-weight: 800;
+}
+.section-h { font-weight: 800; border-bottom-color: var(--rule); }
+.card .section-h { border: 0; padding: 0; margin: 18px 0 8px; font-size: 15.5px; }
+.ed-h { border-bottom: 1px solid var(--rule); }
+.edition h4, .trends h3, .trends > header { border-bottom-color: var(--rule); }
+
+/* 맨 위 카드: 한 줄 요약 + 숫자판 */
+.hero-h { margin: 0 0 12px; font-size: 19px; font-weight: 800; line-height: 1.45; letter-spacing: -0.01em; }
+.hero .board { margin: 0; border: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px; }
+.hero .board li, .hero .board li:nth-child(2n) { border: 0; }
+.hero .board .cell { padding: 8px 4px; border-radius: 10px; }
+.hero .board .label { font-size: 12.5px; }
+.hero .board .value { font-size: 20px; font-weight: 800; }
+.hero .board .change.up, .hero .board .change.down { background: none; padding: 0; }
+.hero .board .spark-wrap { display: none; }
+.hint { margin-top: 8px; }
+
+/* Claude 코멘트 */
+.ai-list { list-style: none; margin: 0; padding: 0; }
+.ai-list li { position: relative; padding: 4px 0 4px 13px; font-size: 14.5px; line-height: 1.6; }
+.ai-list li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 5px; height: 5px; border-radius: 50%; background: var(--muted); }
+.card .src { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
+
+/* 섹터 색 타일 */
+.heat { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.heat li { border-radius: 10px; padding: 9px 6px; text-align: center; font-size: 12.5px; font-weight: 700; line-height: 1.4; background: var(--tint); color: var(--muted); }
+.heat .p { display: block; font-variant-numeric: tabular-nums; }
+.heat .up { background: var(--up-bg); color: var(--up); }
+.heat .down { background: var(--down-bg); color: var(--down); }
+.heat .up.big { background: var(--up-bg2); }
+.heat .down.big { background: var(--down-bg2); }
+
+/* 일정·기사·차트 카드 안의 선 */
+.agenda, .corridor-list, .region-cards, table.deals th, .live-table th { border-top-color: var(--rule); border-bottom-color: var(--rule); }
+.agenda { border-top: 0; }
+.agenda li:last-child, .card .stories > .story:last-child { border-bottom: 0; }
+.lwc { border-top: 1px solid var(--rule); }
+.board { border-top-color: var(--rule); border-bottom-color: var(--rule); }
+
+/* 칩·버튼은 둥글게 */
+.tabs button { border-radius: 999px; padding: 7px 14px; min-height: 36px; }
+.refresh-btn { border-radius: 999px; }
+.theme-opts label { border-radius: 12px; }
+.stock-search input { border-radius: 12px; border-color: var(--rule); }
+.stock-results button, .live-table .rm { border-radius: 999px; }
+.corridor-map { border-radius: 12px; overflow: hidden; }
+
+/* 하단 탭 */
+.bottom-nav { background: var(--paper); border-top: 1px solid var(--rule); }
+.bottom-nav button { border-top: 0; margin-top: 0; }
+.bottom-nav button[aria-selected="true"] { color: var(--ink); }
+
+/* 부동산 단지 필터 드롭다운 */
+.c-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 2px 0 10px; }
+.c-filters label { display: flex; flex-direction: column; gap: 2px; font-size: 11.5px; color: var(--muted); min-width: 0; }
+.c-filters select {
+  font: inherit; font-size: 13.5px; color: var(--ink); background: var(--field); border: 1px solid var(--rule);
+  border-radius: 10px; padding: 8px 6px; min-height: 40px; width: 100%;
+}
+.c-filters select:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+/* 청약 일정 */
+.subs-week { font-size: 14px; font-weight: 700; margin: 14px 0 6px; }
+.subs-days { list-style: none; margin: 0; padding: 0; }
+.subs-days > li { display: grid; grid-template-columns: 76px 1fr; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+.subs-days > li.today .subs-date { color: var(--down); font-weight: 700; }
+.subs-days ul { list-style: none; margin: 0; padding: 0; }
+.subs-days ul li { padding: 1px 0; line-height: 1.5; }
+.subs-date { color: var(--muted); font-family: var(--figures); }
+.subs .tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 7px; border-radius: 999px; background: var(--down-bg); color: var(--down); }
+.subs .tag.due { background: var(--up-bg); color: var(--up); }
+.subs .tag.ann { background: transparent; border: 1px solid var(--rule); color: var(--ink); }
+.subs-warn { margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; background: var(--up-bg); font-size: 13.5px; line-height: 1.5; }
+.subs-item { border-bottom: 1px solid var(--rule); padding: 8px 0; font-size: 14px; }
+.subs-item summary { cursor: pointer; font-weight: 700; min-height: 24px; }
+.subs-item summary .muted { font-weight: 400; font-size: 12.5px; }
+.subs-item p { margin: 4px 0 0; line-height: 1.5; }
+.subs-note { font-size: 12.5px; margin-top: 10px; }</style>
+</head>
+<body>
+<div class="page app">
+  <div class="ptr" id="ptr" aria-hidden="true">↓ 당겨서 새로고침</div>
+  <header class="masthead">
+    <h1>나의 시장일보</h1>
+    <p class="issue">11월 27일 금요일<br>미국장 판 · 07:00</p>
+  </header>
+  <div class="status-row"><p id="app-status" class="app-status" aria-live="polite"></p><button type="button" class="refresh-btn" id="refresh-btn" aria-label="새로고침">↻ 새로고침</button></div>
+<p class="note">휴장일 간이판 · 오늘은 시세만 전합니다.</p>  <main>
+  <section id="pane-market" class="pane" role="tabpanel" aria-labelledby="nav-market">
+    <section class="card hero" aria-label="오늘 한눈에">
+      <ul class="board" aria-label="시세 숫자판">
+        <li class="has-chart">
+<button type="button" class="cell" data-chart="nasdaq" aria-label="나스닥 차트 보기">          <span class="label">나스닥</span>
+          <span class="value">23,585.80</span>
+<span class="change down">▼ 0.62%</span></button>        </li>
+        <li class="has-chart">
+<button type="button" class="cell" data-chart="sp500" aria-label="S&amp;P500 차트 보기">          <span class="label">S&amp;P500</span>
+          <span class="value">7,182.78</span>
+<span class="change down">▼ 0.25%</span></button>        </li>
+        <li>
+<div class="cell">          <span class="label">미 10년물 금리</span>
+          <span class="value">4.85%</span>
+<span class="change down">▼ 1.14%</span></div>        </li>
+        <li class="has-chart">
+<button type="button" class="cell" data-chart="usdkrw" aria-label="원/달러 차트 보기">          <span class="label">원/달러</span>
+          <span class="value">1,343.04</span>
+<span class="change up">▲ 0.03%</span></button>        </li>
+        <li>
+<div class="cell">          <span class="label">필라델피아 반도체</span>
+          <span class="value">8,774.86</span>
+<span class="change down">▼ 0.65%</span></div>        </li>
+        <li class="has-chart">
+<button type="button" class="cell" data-chart="samsung" aria-label="삼성전자 차트 보기">          <span class="label">삼성전자</span>
+          <span class="value">171,300원</span>
+<span class="change up">▲ 0.35%</span></button>        </li>
+        <li class="has-chart">
+<button type="button" class="cell" data-chart="hynix" aria-label="SK하이닉스 차트 보기">          <span class="label">SK하이닉스</span>
+          <span class="value">1,033,000원</span>
+<span class="change up">▲ 2.23%</span></button>        </li>
+      </ul>
+    </section>
+    <article class="edition brief card">
+      <p class="stamp">미국장 판 · 07:00 · 휴장일 간이판</p>
+<h4>선물</h4>
+<ul class="facts">
+  <li><span>S&amp;P500 선물</span><span class="figure"><strong>7,234.50</strong> <span class="up">▲ 0.54%</span></span></li>
+  <li><span>나스닥100 선물</span><span class="figure"><strong>26,221.25</strong> <span class="up">▲ 0.46%</span></span></li>
+  <li><span>다우 선물</span><span class="figure"><strong>50,443.00</strong> <span class="up">▲ 0.43%</span></span></li>
+</ul>
+      <h4>주요 종목</h4>
+      <ul class="facts">
+<li><span>LRCX</span><span class="figure down">▼ 5.68%</span></li><li><span>ORCL</span><span class="figure down">▼ 5.13%</span></li><li><span>MU</span><span class="figure down">▼ 4.53%</span></li><li><span>NVDA</span><span class="figure down">▼ 3.91%</span></li><li><span>AMAT</span><span class="figure down">▼ 3.89%</span></li>      </ul>
+    </article>
+  </section>
+
+  <section id="pane-news" class="pane" role="tabpanel" aria-labelledby="nav-news" hidden>
+    <p class="empty-note">아직 발행 전</p>
+    <p class="colophon">요약 줄은 기사 첫머리 문장을 그대로 옮긴 것입니다(AI 요약 아님). 제목과 “원문”은 언론사 사이트로 이동합니다. 기사 제목과 내용은 각 언론사의 것입니다.</p>
+  </section>
+
+  <section id="pane-re" class="pane" role="tabpanel" aria-labelledby="nav-re" hidden>
+    <section class="corridor" id="corridor" aria-labelledby="corridor-h">
+      <h2 class="section-h" id="corridor-h">평촌 아파트 <span class="muted">동안구 전체 · 거리는 범계역 기준 · <span id="corridor-count"></span></span></h2>
+      <div class="tabs chips" role="group" aria-label="동 선택" id="corridor-dongs"></div>
+      <div class="c-filters">
+        <label><span>가격대</span>
+          <select id="f-price">
+            <option value="">전체</option><option value="0-5">5억 미만</option><option value="5-8">5~8억</option>
+            <option value="8-10">8~10억</option><option value="10-13">10~13억</option><option value="13">13억 이상</option>
+          </select></label>
+        <label><span>세대수</span>
+          <select id="f-hh">
+            <option value="800" selected>800세대+</option><option value="500">500세대+</option><option value="301">300세대 초과</option>
+          </select></label>
+        <label><span>정렬</span>
+          <select id="f-sort">
+            <option value="dist">역 가까운 순</option><option value="high">가격 높은 순</option><option value="low">가격 낮은 순</option>
+            <option value="deals">거래 많은 순</option><option value="big">세대수 많은 순</option>
+          </select></label>
+      </div>
+      <div class="corridor-map" id="corridor-map" role="region" aria-label="단지 위치 지도" hidden></div>
+      <ul class="corridor-list" id="corridor-list"><li class="empty-note">단지 목록을 불러오는 중…</li></ul>
+      <p class="more" id="corridor-more-wrap" hidden><button type="button" class="link" id="corridor-more">더 보기</button></p>
+      <p class="colophon">가격대는 단지마다 가장 많이 거래된 평형의 최근 1년 중위가(없으면 마지막 거래가)로 나눕니다. 세대수는 공동주택관리정보(K-apt) 기준이라 일부 단지는 실제와 다를 수 있습니다. 지도의 점이나 단지를 누르면 3년 실거래 추이(위 칸: 선은 월별 중위 거래가, 점은 거래 한 건 / 아래 칸: 월별 거래 건수)가 열립니다. ㎡는 실거래 신고의 전용면적이고, "약 ○평형"은 공급면적을 전용 × 1.33(전용률 약 75%)으로 추정해 3.3058㎡로 나눈 값입니다. 단지마다 전용률이 달라 1~2평 차이가 날 수 있습니다. 가격은 국토부 실거래 신고 기준이며 최근 한두 달은 신고가 덜 들어와 건수가 적게 보일 수 있습니다.</p>
+    </section>
+    <p class="empty-note">오늘 부동산 판은 아직 발행 전이에요 (저녁 7시, 일요일 특집).</p>
+  </section>
+
+  <section id="pane-settings" class="pane settings" role="tabpanel" aria-labelledby="nav-settings" hidden>
+    <fieldset>
+      <legend>화면 테마</legend>
+      <div class="theme-opts">
+        <label><input type="radio" name="theme" value="auto"><span>자동<span class="sub">휴대폰의 다크 모드 설정을 따라요</span></span></label>
+        <label><input type="radio" name="theme" value="light"><span>라이트 · A안<span class="sub">밝은 회색 배경 + 흰 카드</span></span></label>
+        <label><input type="radio" name="theme" value="dark"><span>다크 · B안<span class="sub">어두운 남색 배경, 숫자가 또렷하게</span></span></label>
+      </div>
+    </fieldset>
+    <p class="about">고른 테마는 이 휴대폰에만 저장돼요. 바꾸면 차트 색을 맞추려고 화면을 한 번 새로 불러와요.</p>
+  </section>
+
+  <section id="pane-live" class="pane live" role="tabpanel" aria-labelledby="nav-live" hidden>
+    <div class="stock-search">
+      <label for="stock-q" class="sr-only">종목 검색</label>
+      <input id="stock-q" type="search" placeholder="종목 검색 · 이름이나 코드 (미국은 AAPL)" autocomplete="off" enterkeyhint="search">
+      <ul id="stock-results" class="stock-results" aria-live="polite"></ul>
+    </div>
+    <div class="live-head">
+      <h2 class="section-h">내 종목</h2>
+      <button type="button" id="my-edit" class="link" aria-pressed="false">편집</button>
+    </div>
+    <table class="live-table">
+      <tbody id="my-rows"><tr><td colspan="3" class="muted">불러오는 중…</td></tr></tbody>
+    </table>
+    <p class="note" id="my-note"></p>
+    <h2 class="section-h">지수 · 환율 · 선물</h2>
+    <table class="live-table">
+      <thead><tr><th scope="col">종목</th><th scope="col">현재</th><th scope="col">전일 대비</th></tr></thead>
+      <tbody id="live-rows"><tr><td colspan="3" class="muted">불러오는 중…</td></tr></tbody>
+    </table>
+    <p class="note" id="live-status" aria-live="polite"></p>
+    <p class="disclaimer">“실시간” 표시는 한국투자증권 시세입니다. 표시가 없는 한국 종목은 약 20분, 미국 선물은 약 10분 늦게 반영됩니다. 장 마감(15:30) 뒤 한국 종목은 넥스트레이드 시간외 가격(20:00까지)이 보입니다. 내 종목 목록은 이 휴대폰에만 저장됩니다. 화면을 켜 둔 동안 1분마다 바뀝니다.</p>
+  </section>
+  </main>
+  <footer class="colophon">시세는 지연될 수 있습니다. 판단을 돕는 참고 자료이며 매수·매도 추천이 아닙니다.
+</footer>
+</div>
+<button type="button" class="to-top" id="to-top" aria-label="맨 위로" hidden>↑ 맨 위로</button>
+<nav class="bottom-nav" role="tablist" aria-label="화면 전환">
+  <button type="button" role="tab" id="nav-market" data-pane="market" aria-controls="pane-market" aria-selected="true">시장</button>
+  <button type="button" role="tab" id="nav-news" data-pane="news" aria-controls="pane-news" aria-selected="false">뉴스</button>
+  <button type="button" role="tab" id="nav-re" data-pane="re" aria-controls="pane-re" aria-selected="false">부동산</button>
+<button type="button" role="tab" id="nav-live" data-pane="live" aria-controls="pane-live" aria-selected="false">실시간</button>  <button type="button" role="tab" id="nav-settings" data-pane="settings" aria-controls="pane-settings" aria-selected="false">설정</button>
+</nav>
+<script>
+(function () {
+  var ROOT = "../../";
+  var STAMP = "2026-11-27T07:00:00+09:00";
+  var IS_INDEX = false;
+  var CHECK_MS = 5 * 60 * 1000;
+  var status = document.getElementById("app-status");
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register(ROOT + "sw.js").catch(function () {});
+  }
+
+  function hhmm(d) {
+    return d.toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit", hour12: false });
+  }
+
+  function show(text, offline) {
+    if (!status) return;
+    status.textContent = text;
+    status.className = "app-status" + (offline ? " offline" : "");
+  }
+
+  var issued = new Date(STAMP);
+  function idle() { show(hhmm(issued) + " 발행 · " + hhmm(new Date()) + " 확인", false); }
+
+  // 새 판이 올라왔는지 확인하고, 있으면 화면을 새로 불러옵니다(첫 화면에서만).
+  function check() {
+    if (!IS_INDEX) return;
+    if (!navigator.onLine) { show("오프라인 · " + hhmm(issued) + " 기준", true); return; }
+    fetch("version.json?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (v) {
+        if (v.stamp && v.stamp !== STAMP) {
+          // 주소를 바꿔 불러와 브라우저에 남은 옛 화면을 피합니다. 같은 판으로 이미 바꿨다면 반복하지 않습니다.
+          var key = "v=" + encodeURIComponent(v.stamp);
+          if (location.search.indexOf(key) === -1) {
+            location.replace(location.pathname + "?" + key + location.hash);
+            return;
+          }
+        }
+        idle();
+      })
+      .catch(function () { show("연결 확인 중 · " + hhmm(issued) + " 기준", true); });
+  }
+
+
+  // ---- 새로고침: 버튼 + 위로 당기기 (아이폰 홈 화면 앱은 기본 당겨서 새로고침이 없음) ----
+  function reloadNow() {
+    show("새로 불러오는 중…", false);
+    var q = "r=" + Date.now();
+    location.replace(location.pathname + "?" + q + location.hash);
+  }
+  var refreshBtn = document.getElementById("refresh-btn");
+  if (refreshBtn) refreshBtn.addEventListener("click", reloadNow);
+  var ptr = document.getElementById("ptr"), startY = null, pulled = 0, PULL = 70;
+  document.addEventListener("touchstart", function (e) {
+    startY = (window.scrollY <= 0 && e.touches.length === 1) ? e.touches[0].clientY : null;
+    pulled = 0;
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (startY === null || !ptr) return;
+    pulled = e.touches[0].clientY - startY;
+    if (pulled > 10 && window.scrollY <= 0) {
+      ptr.style.height = Math.min(pulled, PULL + 20) * 0.6 + "px";
+      ptr.textContent = pulled > PULL ? "↻ 놓으면 새로고침" : "↓ 당겨서 새로고침";
+      ptr.classList.add("on");
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (startY === null || !ptr) return;
+    var go = pulled > PULL && window.scrollY <= 0;
+    startY = null;
+    if (go) { ptr.textContent = "새로 불러오는 중…"; reloadNow(); return; }
+    ptr.style.height = "0px";
+    ptr.classList.remove("on");
+  });
+
+  // ---- 설정: 화면 테마 (자동 / 라이트 / 다크) ----
+  var savedTheme = "auto";
+  try { savedTheme = localStorage.getItem("mb-theme") || "auto"; } catch (e) {}
+  var themeInputs = document.querySelectorAll('input[name="theme"]');
+  for (var ti = 0; ti < themeInputs.length; ti++) {
+    themeInputs[ti].checked = themeInputs[ti].value === savedTheme;
+    themeInputs[ti].addEventListener("change", function () {
+      try {
+        if (this.value === "auto") localStorage.removeItem("mb-theme");
+        else localStorage.setItem("mb-theme", this.value);
+      } catch (e) {}
+      location.reload();  // 차트·지도 색을 새 테마로 다시 그림
+    });
+  }
+
+  // ---- 오늘 일정: 지난 일정은 흐리게, 다음 일정에 '다음' 표시 (1분마다) ----
+  function markAgenda() {
+    var items = document.querySelectorAll("#agenda li[data-at]"), now = Date.now(), nextSet = false;
+    for (var a = 0; a < items.length; a++) {
+      var t = Date.parse(items[a].getAttribute("data-at"));
+      items[a].classList.toggle("past", t < now);
+      var isNext = !nextSet && t >= now;
+      items[a].classList.toggle("next", isNext);
+      if (isNext) nextSet = true;
+    }
+  }
+  markAgenda();
+  setInterval(markAgenda, 60000);
+
+  // ---- 맨 위로 버튼: 한 화면 반 넘게 내려가면 보임 ----
+  var toTop = document.getElementById("to-top");
+  if (toTop) {
+    var onScroll = function () { toTop.hidden = window.scrollY < window.innerHeight * 1.5; };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    onScroll();
+  }
+
+  // ---- 하단 탭: 시장 / 뉴스 / 부동산 / 실시간 / 설정 ----
+  var navBtns = document.querySelectorAll(".bottom-nav [data-pane]");
+  function showPane(name, scroll) {
+    var found = false;
+    for (var i = 0; i < navBtns.length; i++) if (navBtns[i].getAttribute("data-pane") === name) found = true;
+    if (!found) name = "market";
+    for (var j = 0; j < navBtns.length; j++) {
+      var b = navBtns[j], on = b.getAttribute("data-pane") === name;
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      var pane = document.getElementById("pane-" + b.getAttribute("data-pane"));
+      if (pane) pane.hidden = !on;
+    }
+    try { localStorage.setItem("mb-pane", name); } catch (e) {}
+    // 주소 끝도 지금 탭으로 바꿔 둡니다: 새로고침·새 판 자동 갱신이 location.hash를 이어받아 보던 탭이 그대로 열림
+    try { history.replaceState(null, "", location.pathname + location.search + "#" + name); } catch (e) {}
+    if (scroll) window.scrollTo(0, 0);
+    document.dispatchEvent(new CustomEvent("mb:pane", { detail: name }));
+  }
+  for (var k = 0; k < navBtns.length; k++) {
+    navBtns[k].addEventListener("click", function () { showPane(this.getAttribute("data-pane"), true); });
+  }
+  var gotos = document.querySelectorAll("[data-goto]");
+  for (var g = 0; g < gotos.length; g++) {
+    gotos[g].addEventListener("click", function () { showPane(this.getAttribute("data-goto"), true); });
+  }
+  // 숫자판 칸을 누르면 그 종목 일봉 차트로 바꾸고 차트로 이동
+  var cells = document.querySelectorAll(".board [data-chart]");
+  for (var c = 0; c < cells.length; c++) {
+    cells[c].addEventListener("click", function () {
+      var btn = document.querySelector('button[data-tab="candles"][data-key="' + this.getAttribute("data-chart") + '"]');
+      var fig = document.getElementById("candle-fig");
+      if (btn) btn.click();
+      if (fig) fig.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+  var start = location.hash.replace("#", "");
+  if (!start) { try { start = localStorage.getItem("mb-pane") || ""; } catch (e) {} }
+  if (navBtns.length) showPane(start || "market", false);
+
+  idle();
+  if (IS_INDEX) {
+    setInterval(function () { if (!document.hidden) check(); }, CHECK_MS);
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) check(); });
+    window.addEventListener("online", check);
+    window.addEventListener("offline", function () { show("오프라인 · " + hhmm(issued) + " 기준", true); });
+    check();
+  }
+})();</script>
+<script>
+(function () {
+  var DATA_URL = "../../" + "area.json";
+  var PAGE = 15;
+  var pane = document.getElementById("pane-re");
+  var list = document.getElementById("corridor-list");
+  var dongBox = document.getElementById("corridor-dongs");
+  var moreWrap = document.getElementById("corridor-more-wrap");
+  var moreBtn = document.getElementById("corridor-more");
+  if (!pane || !list) return;
+  // 색은 화면 테마(CSS 변수)에서 읽습니다 — 다크 모드에서도 맞는 색으로 그려요.
+  function cssVar(name, fallback) {
+    try { return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback; } catch (e) { return fallback; }
+  }
+  var INK = cssVar("--ink", "#1d1a16"), PAPER = cssVar("--paper", "#f4efe4"), GRID = cssVar("--rule", "#e3dccd"),
+      GRAY = cssVar("--muted", "#8a8172");
+  // 지도 점: 채도가 있는 파란색 + 흰 테두리. 삼성 인터넷처럼 브라우저가 화면 색을 강제로 뒤집어도
+  // (밝기만 반전) 회색 지도 위에서 색으로 구분돼 잘 보이게 합니다.
+  var DOT = cssVar("--down", "#2f5a9e");
+  var FONT = "'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif";
+  var all = [], dong = "전체", shown = PAGE, openRow = null, loading = false;
+
+  // 공급평형(추정): 실거래 신고에는 전용면적만 있어서, 이 지역 1990년대 단지의 보통 전용률(약 75%)로
+  // 공급면적 ≈ 전용 × 1.33 으로 잡고 3.3058㎡(1평)로 나눕니다. 예: 전용 84㎡ → 약 34평형, 59㎡ → 약 24평형.
+  var SUPPLY_RATIO = 1.33;
+  function py(m2) { return Math.round(m2 * SUPPLY_RATIO / 3.3058); }
+  function eok(manwon) { return (manwon / 10000).toFixed(manwon >= 100000 ? 1 : 2).replace(/\.?0+$/, "") + "억"; }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  // ---- 목록 ----
+  function renderDongs() {
+    var dongs = ["전체"];
+    all.forEach(function (c) { if (dongs.indexOf(c.dong) < 0) dongs.push(c.dong); });
+    dongBox.textContent = "";
+    dongs.forEach(function (d) {
+      var b = el("button", null, d);
+      b.type = "button";
+      b.setAttribute("aria-pressed", d === dong ? "true" : "false");
+      b.addEventListener("click", function () { dong = d; shown = PAGE; renderDongs(); renderList(); });
+      dongBox.appendChild(b);
+    });
+  }
+  // ---- 드롭다운: 가격대(주력 평형 1년 중위가, 없으면 최근 거래가) · 세대수 · 정렬 ----
+  var fPrice = document.getElementById("f-price"), fHh = document.getElementById("f-hh"),
+      fSort = document.getElementById("f-sort"), countEl = document.getElementById("corridor-count");
+  function price(c) { return c.median12 || (c.last ? c.last[2] : null); }
+  function inBand(c) {
+    var v = fPrice ? fPrice.value : "", p = price(c);
+    if (!v) return true;
+    if (p == null) return false;
+    var r = v.split("-"), lo = +r[0] * 10000, hi = r[1] ? +r[1] * 10000 : Infinity;
+    return p >= lo && p < hi;
+  }
+  var SORTS = {
+    dist: function (a, b) { return a.dist - b.dist; },
+    high: function (a, b) { return (price(b) || 0) - (price(a) || 0); },
+    low: function (a, b) { return (price(a) || 9e9) - (price(b) || 9e9); },
+    deals: function (a, b) { return b.n12 - a.n12; },
+    big: function (a, b) { return (b.households || 0) - (a.households || 0); }
+  };
+  function filtered() {
+    var minHh = fHh ? +fHh.value : 0;
+    return all.filter(function (c) {
+      return (dong === "전체" || c.dong === dong) && (c.households || 0) >= minHh && inBand(c);
+    }).sort(SORTS[fSort ? fSort.value : "dist"] || SORTS.dist);
+  }
+  [fPrice, fHh, fSort].forEach(function (s) {
+    if (s) s.addEventListener("change", function () { shown = PAGE; renderList(); });
+  });
+  function renderList() {
+    drawMap();
+    list.textContent = "";
+    openRow = null;
+    var rows = filtered();
+    if (countEl) countEl.textContent = rows.length + "곳";
+    rows.slice(0, shown).forEach(function (c) { list.appendChild(row(c)); });
+    if (!rows.length) list.appendChild(el("li", "empty-note", "해당하는 단지가 없어요."));
+    moreWrap.hidden = rows.length <= shown;
+  }
+  function row(c) {
+    var li = el("li", "c-item");
+    li.setAttribute("data-name", c.name);
+    var b = el("button", "c-row");
+    b.type = "button";
+    b.setAttribute("aria-expanded", "false");
+    var left = el("span", "c-left");
+    left.appendChild(el("span", "c-name", c.name));
+    left.appendChild(el("span", "c-sub", c.dong + " · " + (c.households ? c.households.toLocaleString("ko-KR") + "세대 · " : "") + (c.build_year ? c.build_year + "년 · " : "") + "역 " + c.dist + "m"));
+    var right = el("span", "c-right");
+    right.appendChild(el("span", "c-price", c.median12 ? eok(c.median12) : "—"));
+    right.appendChild(el("span", "c-sub", c.area + "㎡(약 " + py(c.area) + "평형) 중위"));
+    right.appendChild(el("span", "c-sub", "거래 1년 " + c.n12 + "건 · 3년 " + c.deals.length + "건"));
+    b.appendChild(left);
+    b.appendChild(right);
+    b.addEventListener("click", function () { toggle(li, b, c); });
+    li.appendChild(b);
+    return li;
+  }
+
+  // ---- 펼친 단지: 평형 칩 + 차트 + 최근 거래 ----
+  function toggle(li, btn, c) {
+    if (openRow && openRow.li !== li) close(openRow);
+    if (openRow && openRow.li === li) { close(openRow); return; }
+    btn.setAttribute("aria-expanded", "true");
+    var box = el("div", "c-detail");
+    li.appendChild(box);
+    openRow = { li: li, btn: btn, box: box, charts: [] };
+    var areas = {};
+    c.deals.forEach(function (d) { areas[d[1]] = (areas[d[1]] || 0) + 1; });
+    var keys = Object.keys(areas).sort(function (a, b) { return areas[b] - areas[a]; });
+    var chips = el("div", "tabs chips");
+    chips.setAttribute("role", "group");
+    chips.setAttribute("aria-label", "전용면적 선택");
+    var legend = el("p", "c-legend");
+    var plot = el("div", "c-plot");
+    var table = el("table", "c-deals");
+    box.appendChild(chips);
+    box.appendChild(legend);
+    box.appendChild(plot);
+    box.appendChild(table);
+    function pick(area) {
+      [].forEach.call(chips.children, function (x) { x.setAttribute("aria-pressed", x.getAttribute("data-area") === area ? "true" : "false"); });
+      var ds = c.deals.filter(function (d) { return String(d[1]) === area; });
+      draw(openRow, plot, legend, ds, area);
+      recent(table, ds);
+    }
+    keys.forEach(function (a) {
+      var b = el("button", null, a + "㎡ · 약 " + py(+a) + "평형 (3년 " + areas[a] + "건)");
+      b.type = "button";
+      b.setAttribute("data-area", a);
+      b.addEventListener("click", function () { pick(a); });
+      chips.appendChild(b);
+    });
+    pick(String(c.area) in areas ? String(c.area) : keys[0]);
+    li.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+  function close(r) {
+    removeCharts(r);
+    if (r.box.parentNode) r.box.parentNode.removeChild(r.box);
+    r.btn.setAttribute("aria-expanded", "false");
+    if (openRow === r) openRow = null;
+  }
+
+  function median(xs) {
+    var s = xs.slice().sort(function (a, b) { return a - b; }), m = s.length >> 1;
+    return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+  }
+  function series(ds) {
+    var byMonth = {}, byDay = {};
+    ds.forEach(function (d) {
+      var mo = d[0].slice(0, 7) + "-01";
+      (byMonth[mo] = byMonth[mo] || []).push(d[3]);
+      (byDay[d[0]] = byDay[d[0]] || []).push(d[3]);
+    });
+    var months = Object.keys(byMonth).sort(), days = Object.keys(byDay).sort();
+    return {
+      med: months.map(function (m) { return { time: m, value: median(byMonth[m]) / 10000 }; }),
+      cnt: months.map(function (m) { return { time: m, value: byMonth[m].length }; }),
+      dots: days.map(function (t) { var v = byDay[t]; return { time: t, value: v.reduce(function (a, b) { return a + b; }, 0) / v.length / 10000 }; })
+    };
+  }
+  function removeCharts(r) {
+    (r.charts || []).forEach(function (c) { try { c.remove(); } catch (e) {} });
+    r.charts = [];
+  }
+  function baseOpts(width, height, showTime) {
+    return {
+      width: width, height: height,
+      layout: { background: { type: "solid", color: PAPER }, textColor: INK, fontFamily: FONT, fontSize: 11, attributionLogo: false },
+      grid: { vertLines: { color: GRID }, horzLines: { color: GRID } },
+      rightPriceScale: { borderColor: GRID, minimumWidth: 56 },
+      timeScale: { borderColor: GRID, visible: showTime },
+      handleScroll: { vertTouchDrag: false },
+      localization: { locale: "ko-KR" }
+    };
+  }
+  // 위: 가격(선 = 월별 중위가, 점 = 거래 한 건), 아래: 월별 거래 건수 — 각자 오른쪽 축, 날짜 축은 함께 움직임
+  function draw(r, plot, legend, ds, area) {
+    removeCharts(r);
+    plot.textContent = "";
+    var hi = Math.max.apply(null, ds.map(function (d) { return d[3]; }));
+    var lo = Math.min.apply(null, ds.map(function (d) { return d[3]; }));
+    legend.textContent = "전용 " + area + "㎡(약 " + py(+area) + "평형) · 3년 " + ds.length + "건 · 최저 " + eok(lo) + " · 최고 " + eok(hi);
+    var LW = window.LightweightCharts;
+    if (!LW) { plot.textContent = "차트를 불러오지 못했어요"; plot.className = "c-plot failed"; return; }
+    var s = series(ds);
+    var top = el("div"), bottom = el("div"), cap = el("p", "c-vol-cap", "월별 거래 건수 · 파란 막대는 이번 달(신고 집계 중)");
+    plot.appendChild(top); plot.appendChild(cap); plot.appendChild(bottom);
+    var w = plot.clientWidth || 320;
+    var price = LW.createChart(top, baseOpts(w, 170, false));
+    var vol = LW.createChart(bottom, baseOpts(w, 90, true));
+    price.priceScale("right").applyOptions({ scaleMargins: { top: 0.08, bottom: 0.08 } });
+    vol.priceScale("right").applyOptions({ scaleMargins: { top: 0.12, bottom: 0 } });
+    r.charts = [price, vol];
+    var fmtE = { type: "custom", formatter: function (v) { return v.toFixed(1) + "억"; } };
+    var dots = price.addLineSeries({ color: GRAY, lineVisible: false, pointMarkersVisible: true, pointMarkersRadius: 2.5,
+      lastValueVisible: false, priceLineVisible: false, crosshairMarkerVisible: false, priceFormat: fmtE });
+    dots.setData(s.dots);
+    var line = price.addLineSeries({ color: INK, lineWidth: 2, lastValueVisible: true, priceLineVisible: false, priceFormat: fmtE });
+    line.setData(s.med);
+    var bars = vol.addHistogramSeries({ color: "rgba(138,129,114,0.7)", lastValueVisible: false, priceLineVisible: false,
+      priceFormat: { type: "custom", minMove: 1, formatter: function (v) { return Math.round(v) + "건"; } } });
+    var tm = (function () { var d = new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-01"; })();
+    bars.setData(s.cnt.map(function (x) { return x.time === tm ? { time: x.time, value: x.value, color: "rgba(47,90,158,0.6)" } : x; }));
+    price.timeScale().fitContent();
+    vol.timeScale().fitContent();
+    var syncing = false;
+    function link(from, to) {
+      from.timeScale().subscribeVisibleTimeRangeChange(function (range) {
+        if (syncing || !range) return;
+        syncing = true;
+        try { to.timeScale().setVisibleRange(range); } catch (e) {}
+        syncing = false;
+      });
+    }
+    link(price, vol); link(vol, price);
+    if (window.ResizeObserver) new ResizeObserver(function () {
+      if (r.charts[0] !== price) return;
+      price.resize(plot.clientWidth, 170); vol.resize(plot.clientWidth, 90);
+    }).observe(plot);
+  }
+  // 거래 이력: 최근 10건, 버튼으로 3년 전체
+  function recent(table, ds, all) {
+    table.textContent = "";
+    var cap = el("caption", null, "거래 이력 · " + ds.length + "건");
+    table.appendChild(cap);
+    var head = el("tr");
+    ["계약일", "층", "거래가"].forEach(function (h) { head.appendChild(el("th", null, h)); });
+    table.appendChild(head);
+    var rows = ds.slice().reverse();
+    (all ? rows : rows.slice(0, 10)).forEach(function (d) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, d[0].slice(2).replace(/-/g, ".")));
+      tr.appendChild(el("td", null, d[2] + "층"));
+      tr.appendChild(el("td", "price", eok(d[3])));
+      table.appendChild(tr);
+    });
+    if (rows.length > 10) {
+      var tr = el("tr"), td = el("td"), b = el("button", "c-more", all ? "최근 10건만 보기" : "전체 " + rows.length + "건 보기");
+      td.colSpan = 3; b.type = "button";
+      b.addEventListener("click", function () { recent(table, ds, !all); });
+      td.appendChild(b); tr.appendChild(td); table.appendChild(tr);
+    }
+  }
+
+  // ---- 지도 (Leaflet + OpenStreetMap, 부동산 탭을 열 때만 불러옴) ----
+  var LEAFLET_JS = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+  var LEAFLET_CSS = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+  var mapBox = document.getElementById("corridor-map");
+  var map = null, layer = null, center = null, leafletLoading = null;
+  function loadLeaflet() {
+    if (window.L) return Promise.resolve();
+    if (leafletLoading) return leafletLoading;
+    leafletLoading = new Promise(function (ok, bad) {
+      var css = document.createElement("link");
+      css.rel = "stylesheet"; css.href = LEAFLET_CSS; css.crossOrigin = "anonymous";
+      css.integrity = "sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb";
+      document.head.appendChild(css);
+      var js = document.createElement("script");
+      js.src = LEAFLET_JS; js.crossOrigin = "anonymous";
+      js.integrity = "sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO";
+      js.onload = ok; js.onerror = bad;
+      document.head.appendChild(js);
+    });
+    return leafletLoading;
+  }
+  function openByName(name) {
+    var rows = filtered(), i = -1;
+    for (var k = 0; k < rows.length; k++) if (rows[k].name === name) i = k;
+    if (i < 0) return;
+    if (i >= shown) { shown = i + 1; renderList(); }
+    var items = list.querySelectorAll("li.c-item"), li = null;
+    for (var j = 0; j < items.length; j++) if (items[j].getAttribute("data-name") === name) li = items[j];
+    if (!li) return;
+    var b = li.querySelector(".c-row");
+    if (b.getAttribute("aria-expanded") !== "true") b.click();
+    li.scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+  function drawMap() {
+    if (!mapBox) return;
+    loadLeaflet().then(function () {
+      var L = window.L;
+      if (!map) {
+        mapBox.hidden = false;
+        map = L.map(mapBox, { scrollWheelZoom: false });
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 18, attribution: "&copy; OpenStreetMap"
+        }).addTo(map);
+        if (center) L.circleMarker([center.lat, center.lng], { radius: 8, color: "#ffffff", weight: 2.5, fillColor: cssVar("--up", "#b23a2e"), fillOpacity: 1 })
+          .addTo(map).bindTooltip(center.name, { permanent: true, direction: "top", offset: [0, -6] });
+      }
+      if (layer) map.removeLayer(layer);
+      layer = L.layerGroup().addTo(map);
+      var pts = [];
+      filtered().forEach(function (c) {
+        if (c.lat == null) return;
+        pts.push([c.lat, c.lng]);
+        L.circleMarker([c.lat, c.lng], { radius: 7, color: "#ffffff", weight: 2, fillColor: DOT, fillOpacity: 1 })
+          .addTo(layer)
+          .bindTooltip(c.name + (c.median12 ? " · " + eok(c.median12) : ""), { direction: "top" })
+          .on("click", function () { openByName(c.name); });
+      });
+      if (center) pts.push([center.lat, center.lng]);
+      // 지도 칸의 실제 크기를 잡은 뒤에 범위를 맞춰야 너무 멀리서 보이지 않습니다.
+      setTimeout(function () {
+        map.invalidateSize();
+        if (pts.length) map.fitBounds(pts, { padding: [18, 18], maxZoom: 16 });
+      }, 60);
+    }).catch(function () { mapBox.hidden = true; });
+  }
+
+  // ---- 불러오기: 부동산 탭을 처음 열 때 ----
+  function load() {
+    if (all.length || loading) return;
+    loading = true;
+    fetch(DATA_URL, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) { all = d.complexes || []; center = d.center || null; renderDongs(); renderList(); })
+      .catch(function () { list.textContent = ""; list.appendChild(el("li", "empty-note", "단지 목록을 불러오지 못했어요.")); })
+      .then(function () { loading = false; });
+  }
+  moreBtn.addEventListener("click", function () { shown += PAGE; renderList(); });
+  function sync() { if (!pane.hidden) load(); }
+  document.addEventListener("mb:pane", sync);
+  sync();
+})();</script>
+<script>
+(function () {
+  var LIVE_URL = "https://mb-quotes.mb-q7k2.workers.dev/quotes";
+  var QUOTE_URL = LIVE_URL.replace(/\/quotes$/, "/quote");
+  var STOCKS_URL = "../../" + "stocks.json";
+  var REFRESH_MS = 60000;
+  var MAX_MY = 20;
+  var MY_KEY = "mb-my-stocks";
+  var DEFAULT_MY = [{ id: "KS:005930", n: "삼성전자" }, { id: "KS:000660", n: "SK하이닉스" }];
+  var IN_MY_DEFAULTS = { samsung: 1, hynix: 1 }; // 내 종목으로 옮긴 기본 종목은 아래 지수 표에서 뺍니다
+
+  var panelLive = document.getElementById("pane-live");
+  var rows = document.getElementById("live-rows");
+  var myRows = document.getElementById("my-rows");
+  var myNote = document.getElementById("my-note");
+  var editBtn = document.getElementById("my-edit");
+  var input = document.getElementById("stock-q");
+  var results = document.getElementById("stock-results");
+  var status = document.getElementById("live-status");
+  var timer = null, editing = false, stocks = null, stocksLoading = null;
+  var last = {}, myQuotes = {};
+
+  // ---- 저장 (이 휴대폰에만) ----
+  function loadMy() {
+    try {
+      var v = JSON.parse(localStorage.getItem(MY_KEY));
+      if (Array.isArray(v)) return v.filter(function (x) { return x && x.id && x.n; }).slice(0, MAX_MY);
+    } catch (e) {}
+    return DEFAULT_MY.slice();
+  }
+  function saveMy() { try { localStorage.setItem(MY_KEY, JSON.stringify(my)); } catch (e) {} }
+  var my = loadMy();
+  function hasMy(id) { for (var i = 0; i < my.length; i++) if (my[i].id === id) return true; return false; }
+
+  // ---- 표시 ----
+  function fmt(n, digits) {
+    return n.toLocaleString("ko-KR", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  }
+  function cell(text, cls) {
+    var td = document.createElement("td");
+    td.textContent = text;
+    if (cls) td.className = cls;
+    return td;
+  }
+  function quoteRow(label, q, digits, extra) {
+    var tr = document.createElement("tr");
+    var name = cell(label);
+    if (q && q.realtime) {
+      var tag = document.createElement("span");
+      tag.className = "rt";
+      tag.textContent = "실시간";
+      name.appendChild(tag);
+    }
+    if (extra) name.appendChild(extra);
+    tr.appendChild(name);
+    if (!q || q.price === null || q.price === undefined) {
+      tr.appendChild(cell("—", "px muted"));
+      tr.appendChild(cell(q ? "데이터 없음" : "불러오는 중", "chg muted"));
+      return tr;
+    }
+    tr.appendChild(cell(fmt(q.price, digits), "px"));
+    var td = cell("—", "chg flat");
+    if (q.pct !== null && q.pct !== undefined && Math.abs(q.pct) >= 0.005) {
+      td.className = "chg " + (q.pct > 0 ? "up" : "down");
+      td.textContent = (q.pct > 0 ? "▲ " : "▼ ") + Math.abs(q.pct).toFixed(2) + "%";
+      var amt = document.createElement("span");
+      amt.className = "amt";
+      amt.textContent = fmt(Math.abs(q.change), digits);
+      td.appendChild(amt);
+    }
+    tr.appendChild(td);
+    var k = label + "|" + digits;
+    if (last[k] !== undefined && last[k] !== q.price) tr.className = "flash";
+    last[k] = q.price;
+    return tr;
+  }
+
+  function renderDefaults(data) {
+    rows.textContent = "";
+    data.quotes.forEach(function (q) {
+      if (IN_MY_DEFAULTS[q.key]) return;
+      rows.appendChild(quoteRow(q.label, q, q.digits));
+    });
+    var t = new Date(data.updated * 1000);
+    status.textContent = t.toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" }) + " 갱신 · 1분마다 자동";
+  }
+
+  function renderMy() {
+    myRows.textContent = "";
+    if (!my.length) {
+      var tr = document.createElement("tr");
+      var td = cell("위 검색창에서 종목을 찾아 추가해 보세요.", "empty-row");
+      td.colSpan = 3;
+      tr.appendChild(td);
+      myRows.appendChild(tr);
+    }
+    my.forEach(function (s, i) {
+      var rm = null;
+      if (editing) {
+        rm = document.createElement("button");
+        rm.type = "button";
+        rm.className = "rm";
+        rm.textContent = "빼기";
+        rm.setAttribute("aria-label", s.n + " 빼기");
+        rm.addEventListener("click", function () { my.splice(i, 1); saveMy(); renderMy(); });
+      }
+      myRows.appendChild(quoteRow(s.n, myQuotes[s.id], s.id.indexOf("US:") === 0 ? 2 : 0, rm));
+    });
+    myNote.textContent = my.length >= MAX_MY ? "내 종목은 " + MAX_MY + "개까지 담을 수 있어요." : "";
+  }
+
+  // ---- 불러오기 ----
+  function getJSON(url) {
+    return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  }
+  function loadMyQuotes() {
+    if (!my.length) { renderMy(); return Promise.resolve(); }
+    var ids = my.map(function (s) { return s.id; }).join(",");
+    return getJSON(QUOTE_URL + "?items=" + encodeURIComponent(ids)).then(function (data) {
+      data.quotes.forEach(function (q) { myQuotes[q.key] = q; });
+      renderMy();
+    }).catch(function () { renderMy(); });
+  }
+  function load() {
+    getJSON(LIVE_URL).then(renderDefaults)
+      .catch(function () { status.textContent = "시세를 불러오지 못했습니다. 잠시 후 다시 시도합니다."; });
+    loadMyQuotes();
+  }
+
+  // ---- 검색 ----
+  function ensureStocks() {
+    if (stocks) return Promise.resolve(stocks);
+    if (!stocksLoading) {
+      stocksLoading = getJSON(STOCKS_URL).then(function (d) { stocks = d.stocks || []; return stocks; })
+        .catch(function () { stocksLoading = null; return []; });
+    }
+    return stocksLoading;
+  }
+  function norm(s) { return String(s).toLowerCase().replace(/\s+/g, ""); }
+  function search(q) {
+    var nq = norm(q), up = nq.toUpperCase();
+    if (!nq || !stocks) return [];
+    var exact = [], starts = [], contains = [];
+    for (var i = 0; i < stocks.length; i++) {
+      var code = stocks[i][0], name = norm(stocks[i][1]);
+      if (code === up || name === nq) exact.push(stocks[i]);
+      else if (name.indexOf(nq) === 0 || code.indexOf(up) === 0) { if (starts.length < 40) starts.push(stocks[i]); }
+      else if (name.indexOf(nq) > 0) { if (contains.length < 40) contains.push(stocks[i]); }
+    }
+    // 우선주(이름 끝 "우", "우B" 등)는 같은 묶음 안에서 뒤로 보냅니다.
+    function pref(x) { return /우[A-Z0-9]?$|\(전환\)$/.test(x[1]) ? 1 : 0; }
+    function byPref(a, b) { return (pref(a) - pref(b)) || ((b[3] || 0) - (a[3] || 0)); } // 우선주 뒤로, 큰 종목 먼저
+    return exact.concat(starts.sort(byPref), contains.sort(byPref)).slice(0, 8);
+  }
+  function resultRow(id, name, sub) {
+    var li = document.createElement("li");
+    var left = document.createElement("span");
+    var nm = document.createElement("span");
+    nm.className = "name";
+    nm.textContent = name;
+    var cd = document.createElement("span");
+    cd.className = "code";
+    cd.textContent = sub;
+    left.appendChild(nm);
+    left.appendChild(cd);
+    var btn = document.createElement("button");
+    btn.type = "button";
+    if (hasMy(id)) { btn.textContent = "추가됨"; btn.disabled = true; }
+    else if (my.length >= MAX_MY) { btn.textContent = "가득 참"; btn.disabled = true; }
+    else {
+      btn.textContent = "추가";
+      btn.addEventListener("click", function () {
+        my.unshift({ id: id, n: name });
+        saveMy();
+        input.value = "";
+        results.textContent = "";
+        renderMy();
+        loadMyQuotes();
+      });
+    }
+    li.appendChild(left);
+    li.appendChild(btn);
+    return li;
+  }
+  function showResults() {
+    var q = input.value.trim();
+    results.textContent = "";
+    if (!q) return;
+    ensureStocks().then(function () {
+      if (input.value.trim() !== q) return;
+      search(q).forEach(function (s) {
+        results.appendChild(resultRow(s[2] + ":" + s[0], s[1], s[0] + (s[2] === "KQ" ? " · 코스닥" : " · 코스피")));
+      });
+      if (/^[A-Za-z][A-Za-z0-9.\-]{0,9}$/.test(q)) {
+        var t = q.toUpperCase();
+        results.appendChild(resultRow("US:" + t, t, "미국 종목"));
+      }
+      if (!results.children.length) {
+        var li = document.createElement("li");
+        li.textContent = "찾는 종목이 없어요.";
+        results.appendChild(li);
+      }
+    });
+  }
+  var searchTimer = null;
+  input.addEventListener("input", function () { clearTimeout(searchTimer); searchTimer = setTimeout(showResults, 150); });
+  input.addEventListener("focus", ensureStocks);
+
+  editBtn.addEventListener("click", function () {
+    editing = !editing;
+    editBtn.textContent = editing ? "완료" : "편집";
+    editBtn.setAttribute("aria-pressed", editing ? "true" : "false");
+    renderMy();
+  });
+
+  // ---- 갱신 주기: 실시간 탭이 보일 때만 ----
+  function start() { if (!timer) { load(); timer = setInterval(load, REFRESH_MS); } }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function sync() { if (panelLive && !panelLive.hidden && !document.hidden) start(); else stop(); }
+  document.addEventListener("mb:pane", sync);
+  document.addEventListener("visibilitychange", sync);
+  renderMy();
+  sync();
+})();</script>
+</body>
+</html>
